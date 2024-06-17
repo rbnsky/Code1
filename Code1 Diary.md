@@ -5,17 +5,21 @@
 
 ## Descriptions for Software
 
+
 **Git**
 
 Git is a free, open source and easy to learn distributed version control system designed to handle everything from small to very large projects with speed and efficiency. Allows Users to code together.
+
 
 **Node.js**
 
 Node.js JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts.
 
+
 **Visual Studio**
 
 Visual Studio is a Coding GUI that helps users understanding and reading code.
+
 
 **TypeScript**
 
