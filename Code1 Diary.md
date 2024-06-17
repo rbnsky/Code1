@@ -1,5 +1,8 @@
-*DAY ONE 17.06.2023*
-### Descriptions for Software
+*17.06.2023*
+*DAY ONE*
+
+
+## Descriptions for Software
 
 **Git**
 
@@ -19,7 +22,7 @@ TypeScript is a language for application-scale JavaScript. TypeScript adds optio
 TypeScript compiles to readable, standards-based JavaScript.
 
 
-### What we learned
+## What we learned
 
 We learned:
 - how to create and share repositories.
