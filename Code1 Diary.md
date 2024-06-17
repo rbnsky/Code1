@@ -42,7 +42,7 @@ We learned:
 
 **stage** - Look at your code before committing. Only staged code is committed.
 
-**commit** - Finsishes the changes to a file.
+**commit** - Finishes the changes to a file.
 
 **fetch** - Downloads a file version and stores it in an alternate branch.
 
