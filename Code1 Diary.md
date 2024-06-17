@@ -32,5 +32,7 @@ TypeScript compiles to readable, standards-based JavaScript.
 We learned:
 - how to create and share repositories.
 - how to write in Markdown.
-- how to link and display images in Github/Markdown.
+- how to link and display images in Gitub/Markdown.
+- how to Clone repositories to a local computer.
+- how to push local repositories to GitHub.
 
