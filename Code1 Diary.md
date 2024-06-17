@@ -1,6 +1,4 @@
-*DAY 1*
-
-
+*DAY ONE 17.06.2023*
 ### Descriptions for Software
 
 **Git**
