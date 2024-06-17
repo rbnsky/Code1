@@ -36,5 +36,7 @@ We learned:
 - how to Clone repositories to a local computer.
 - how to push local repositories to GitHub.
 - how to create new branches
-- or did we really?
+- how to merge branches
+
+
 
