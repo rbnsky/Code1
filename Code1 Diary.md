@@ -44,7 +44,7 @@ We learned:
 
 **commit** - Finsishes the changes to a file.
 
-**fetch** - Downloads a Version.
+**fetch** - Downloads a file version and stores it in an alternate branch.
 
 **pull** - Fetches and merges with current Version.
 
