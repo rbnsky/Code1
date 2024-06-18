@@ -20,7 +20,7 @@ Visual Studio is a Coding GUI that helps users understanding and reading code.
 
 **TypeScript**
 
-TypeScript is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. 
+TypeScript is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript           applications for any browser, for any host, on any OS. 
 TypeScript compiles to readable, standards-based JavaScript.
 
 ## What we learned
@@ -71,31 +71,39 @@ We learned:
 
 **Merge**
 
-  Creates a merge commit that combines changes from one branch into another.
+    Creates a merge commit that combines changes from one branch into another.
   
-  Retains all individual commits from both branches in the commit history.
+    Retains all individual commits from both branches in the commit history.
   
-  Provides clear information about the branch history.
+    Provides clear information about the branch history.
   
-  Useful for integrating feature branches into the main branch.
+    Useful for integrating feature branches into the main branch.
 
 **Rebase**
 
-  Moves the head of the current branch to the last commit of the target branch.
+    Moves the head of the current branch to the last commit of the target branch.
   
-  Produces a more linear commit history.
+    Produces a more linear commit history.
   
-  Replays the changes from the feature branch on top of the target branch.
+    Replays the changes from the feature branch on top of the target branch.
   
-  Useful for keeping a clean, linear history and avoiding unnecessary merge commits.
+    Useful for keeping a clean, linear history and avoiding unnecessary merge commits.
 
 **Squash**
 
-  Combines all commits from a feature branch into a single squashed commit.
+    Combines all commits from a feature branch into a single squashed commit.
   
-  Creates a clean linear history but provides less information about individual commits.
+    Creates a clean linear history but provides less information about individual commits.
   
-  Useful when you want to simplify the commit history and discard the source branch.
+    Useful when you want to simplify the commit history and discard the source branch.
+
+  ## What does VisualStudio mean by "Sync Changes"?
+
+    Synchronize Changes will pull remote changes down to your local repository and then push local commits to the upstream branch.
+  
+    If there is no upstream branch configured and the Git repository has remotes set up, the Publish action is enabled. 
+  
+    This will let you publish the current branch to a remote.
 
 
 
