@@ -54,35 +54,45 @@ We learned:
 
 *DAY TWO*
 
+## Removing Untracked Files
+
+  1. Run git clean -n to see a dry run.
+  2. Run git clean -f to force untracked file deletion.
+  3. Use git clean -f -d to remove untracked directories.
+  4. Use git clean -f -x to remove untracked . gitignore files.
+  5. Add the -i switch to do an interactive git clean.
+
 ## Merge Strategies
 
 **Merge**
 
   Creates a merge commit that combines changes from one branch into another.
-
+  
   Retains all individual commits from both branches in the commit history.
-
+  
   Provides clear information about the branch history.
-
+  
   Useful for integrating feature branches into the main branch.
 
 **Rebase**
 
   Moves the head of the current branch to the last commit of the target branch.
-
+  
   Produces a more linear commit history.
-
+  
   Replays the changes from the feature branch on top of the target branch.
-
+  
   Useful for keeping a clean, linear history and avoiding unnecessary merge commits.
 
 **Squash**
 
   Combines all commits from a feature branch into a single squashed commit.
-
+  
   Creates a clean linear history but provides less information about individual commits.
-
+  
   Useful when you want to simplify the commit history and discard the source branch.
+
+
 
 
 
