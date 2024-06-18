@@ -58,7 +58,7 @@ We learned:
 
 - The git stash command, which saves uncommitted changes and reset your workspace.
 - The git reset command, which only touches tracked files.
-- The git clean command, that deletes every untracked file.
+- The git clean command, that deletes every untracked file (May require -f to force the action).
 
 ## Removing Untracked Files
 - Run git clean -n to see a dry run.
