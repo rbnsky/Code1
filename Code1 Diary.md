@@ -54,13 +54,18 @@ We learned:
 
 *DAY TWO*
 
-## Removing Untracked Files
+## Remove uncommitted changes in Git
 
-  1. Run git clean -n to see a dry run.
-  2. Run git clean -f to force untracked file deletion.
-  3. Use git clean -f -d to remove untracked directories.
-  4. Use git clean -f -x to remove untracked . gitignore files.
-  5. Add the -i switch to do an interactive git clean.
+- The git stash command, which saves uncommitted changes and reset your workspace.
+- The git reset command, which only touches tracked files.
+- The git clean command, that deletes every untracked file.
+
+## Removing Untracked Files
+- Run git clean -n to see a dry run.
+- Run git clean -f to force untracked file deletion.
+- Use git clean -f -d to remove untracked directories.
+- Use git clean -f -x to remove untracked . gitignore files.
+- Add the -i switch to do an interactive git clean.
 
 ## Merge Strategies
 
