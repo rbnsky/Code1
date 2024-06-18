@@ -100,9 +100,9 @@ We learned:
 ## What does VisualStudio mean by "Sync Changes"?
 
 Synchronize Changes will pull remote changes down to your local repository and then push local commits to the upstream branch.
-  
-If there is no upstream branch configured and the Git repository has remotes set up, the Publish action is enabled. 
-  
+
+If there is no upstream branch configured and the Git repository has remotes set up, the Publish action is enabled.
+
 This will let you publish the current branch to a remote.
 
 ## What does the .git Folder do?
