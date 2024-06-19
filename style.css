@@ -1,0 +1,16 @@
+body {
+    color: turquoise ;
+    margin: 0px;
+}
+
+div {
+    display: inline;
+    background-color: teal
+    height: 50px;
+}
+
+div#test {
+    display:block
+    color: rgb(179, 260, 210);
+    /*background-color: white; */
+}
