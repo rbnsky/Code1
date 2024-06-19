@@ -126,7 +126,7 @@ It contains Links to this Diary, a HTML we used to try out different tags aswell
 
 Using HTML and the Image editing Software Paint.NET we made a small game with many branching storypaths and called it Budimir's Gate.
 
-The Game can be played [here](https://matbudimir.github.io/0Sugar/Branchgame/index.html)
+To start the game, press [play](https://matbudimir.github.io/0Sugar/Branchgame/index.html).
 
 ## CSS
 
