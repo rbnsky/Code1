@@ -110,6 +110,11 @@ This will let you publish the current branch to a remote.
 The Git directory is where Git stores the metadata and object database for your project. 
 This is the most important part of Git, and it is what is copied when you clone a repository from another computer.
 
+##HTML
+
+We proceeded to make our own Website using HTML which can be found here <https://rbnsky.github.io/Code1/>
+
+
 
 
 
