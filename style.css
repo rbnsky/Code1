@@ -1,16 +1,26 @@
 body {
-    color: turquoise ;
-    margin: 0px;
+    font-family: 'Arial' sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #4B695F;
 }
-
-div {
-    display: inline;
-    background-color: teal
-    height: 50px;
+header {
+    background-color: #1d4538;
+    color: #DFFFF4;
+    padding: 10px 0;
+    text-align: center;
 }
-
-div#test {
-    display:block
-    color: rgb(179, 260, 210);
-    /*background-color: white; */
+nav {
+    margin: 20px 0;
+}
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #DFFFF4;
+}
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #DFFFF4
+    ;
 }
