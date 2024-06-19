@@ -116,13 +116,21 @@ We proceeded to make our own Websites using HTML which, in my case, can be found
 
 It contains Links to this Diary, a HTML we used to try out different tags aswell as one that leads to a screenshot of a website I tampered with using HTML.
 
-##
+#
 
 *19.06.2023*
 
 *DAY THREE*
 
 ## Budimir's Gate
+
+Using HTML and the Image editing Software Paint.NET we made a small game with many branching storypaths and called it Budimir's Gate.
+
+The Game can be played [here](https://matbudimir.github.io/0Sugar/Branchgame/index.html)
+
+## CSS
+
+
 
 
 
