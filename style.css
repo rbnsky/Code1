@@ -1,10 +1,12 @@
 body {
+    font-size: medium;
     font-family: 'Calibri';
     margin: 0;
     padding: 20px;
     background-color: #4B695F;
 }
 header {
+    font-size: large;
     background-color: #1d4538;
     color: #DFFFF4;
     padding: 10px 0;
@@ -14,13 +16,14 @@ nav {
     margin: 20px 0;
 }
 nav a {
+    font-size: medium;
     margin: 0 10px;
     text-decoration: none;
     color: #DFFFF4;
 }
 footer {
+    font-size: small;
     margin-top: 20px;
     text-align: center;
-    color: #DFFFF4
-    ;
+    color: #DFFFF4;
 }
