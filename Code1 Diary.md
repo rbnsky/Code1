@@ -132,7 +132,7 @@ To start the game, press [play](https://matbudimir.github.io/0Sugar/Branchgame/i
 
 ## CSS
 
-Here are some basic Properties that can be changed in CSS:
+**Some basic Properties that can be changed in CSS:**
 
 **background** - A shorthand for background properties like color, image, and position.
 
@@ -154,10 +154,11 @@ Here are some basic Properties that can be changed in CSS:
 
 **text-align** - Aligns text (left, right, center).
 
+**What does "cascading" mean in CSS?**
 
+The “cascading” in CSS refers to the fact that styling rules “cascade” down from several sources. 
 
-
-
+This means that CSS has an inherent hierarchy and styles of a higher precedence will overwrite rules of a lower precedence.
 
 
 
