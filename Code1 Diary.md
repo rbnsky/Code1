@@ -116,6 +116,8 @@ We proceeded to make our own Websites using HTML which, in my case, can be found
 
 It contains Links to this Diary, a HTML we used to try out different tags aswell as one that leads to a screenshot of a website I tampered with using HTML.
 
+This Website will be updated with more content as the Code1 Block continues.
+
 #
 
 *19.06.2023*
