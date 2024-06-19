@@ -160,6 +160,18 @@ The “cascading” in CSS refers to the fact that styling rules “cascade” d
 
 This means that CSS has an inherent hierarchy and styles of a higher precedence will overwrite rules of a lower precedence.
 
+## Selectors in CSS
+
+- Tag
+- Id
+- Class
+
+- Pseudo
+- Universal
+- Hierarchy
+- Attributes
+
+
 
 
 
