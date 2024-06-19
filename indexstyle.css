@@ -3,38 +3,43 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e0f7f9;
-    color: #004d4d;
+    background-color: #4B695F;
+    color: #DFFFF4;
 }
 
 /* Header Styles */
 header {
-    background-color: #004d4d;
-    color: #ffffff;
+    background-color: #3B4B46;
+    color: #DFFFF4;
     padding: 20px;
     text-align: center;
 }
 
 /* Navigation Styles */
 nav {
-    background-color: #009688;
-    padding: 10px;
+    background-color: #DFFFF4;
+    padding: 20px;
+    text-align: center;
+}
+
+nav h2 {
+    color: #3B4B46;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin: 10px 0;
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: #3B4B46;
     text-decoration: none;
     font-weight: bold;
 }
@@ -45,7 +50,7 @@ nav ul li a:hover {
 
 /* Footer Styles */
 footer {
-    background-color: #004d4d;
+    background-color: #3B4B46;
     color: #ffffff;
     text-align: center;
     padding: 10px;
