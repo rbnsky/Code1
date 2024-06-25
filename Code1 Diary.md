@@ -201,9 +201,13 @@ We reviewed the progress we made on our Typescript-based branching story game, l
 
 Using arrays, we separated the text content from our code (which we haven't quite finshed yet).
 
+#
+
 *25.06.2024*
 
 *DAY SIX*
+
+
 
 
 

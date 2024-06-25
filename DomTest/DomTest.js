@@ -18,7 +18,7 @@ function getRandomColor() {
     return color;
 }
 function createRandomElements() {
-    const numElements = getRandomInt(1, 500000); // Integer for amount of Hello World's
+    const numElements = getRandomInt(1, 300000); // Integer for amount of Hello World's
     const container = document.body;
     for (let i = 0; i < numElements; i++) {
         const element = document.createElement(Math.random() > 0.5 ? 'div' : 'span');
