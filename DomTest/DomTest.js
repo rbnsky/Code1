@@ -18,7 +18,7 @@ function getRandomColor() {
     return color;
 }
 function createRandomElements() {
-    const numElements = getRandomInt(1, 300000); // Integer for amount of Hello World's
+    const numElements = getRandomInt(30, 50); // Integer for amount of Hello World's
     const container = document.body;
     for (let i = 0; i < numElements; i++) {
         const element = document.createElement(Math.random() > 0.5 ? 'div' : 'span');
@@ -28,10 +28,17 @@ function createRandomElements() {
         element.style.top = `${getRandomInt(0, window.innerHeight - 1)}px`;
         element.style.backgroundColor = getRandomColor();
         element.style.color = getRandomColor();
-        element.style.padding = '1px';
+        element.style.padding = '5px';
         element.style.fontFamily = 'Roboto, sans-serif';
-        element.style.fontSize = '1px';
+        element.style.fontSize = '20px';
+        element.addEventListener('click', () => updateElement(element));
         container.appendChild(element);
     }
+}
+function updateElement(element) {
+    element.style.left = `${getRandomInt(0, window.innerWidth - 1)}px`;
+    element.style.top = `${getRandomInt(0, window.innerHeight - 1)}px`;
+    element.style.backgroundColor = getRandomColor();
+    element.style.color = getRandomColor();
 }
 createRandomElements();
