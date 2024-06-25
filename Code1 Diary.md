@@ -173,6 +173,38 @@ This means that CSS has an inherent hierarchy and styles of a higher precedence 
 
 ## Updates to my Repository Website
 
+I updated my Code1 Repository Website with a completely new design using css.
+
+As always, it can be found [here](https://rbnsky.github.io/Code1/).
+
+#
+
+20.06.2024*
+
+*DAY FOUR*
+
+## Creating a Web-based Game using Typescript
+
+Today we started creating another branching story game, this time using Typescrpit.
+
+While it isn't fully finished, the project can be found [here](https://matbudimir.github.io/0Sugar/Robjoern/index.html).
+
+#
+
+*24.06.2024*
+
+*DAY FIVE*
+
+## Typescript Code Review
+
+We reviewed the progress we made on our Typescript-based branching story game, learning about arrays in the process.
+
+Using arrays, we separated the text content from our code (which we haven't quite finshed yet).
+
+*25.06.2024*
+
+*DAY SIX*
+
 
 
 
