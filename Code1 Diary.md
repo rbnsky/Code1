@@ -162,14 +162,13 @@ This means that CSS has an inherent hierarchy and styles of a higher precedence 
 
 ## Selectors in CSS
 
-- Tag
-- Id
-- Class
-
-- Pseudo
-- Universal
-- Hierarchy
-- Attributes
+'Tag'
+'Id'
+'Class'
+'Pseudo'
+'Universal'
+'Hierarchy'
+'Attributes'
 
 ## Updates to my Repository Website
 
@@ -211,81 +210,81 @@ Using arrays, we separated the text content from our code (which we haven't quit
 
 **Mouse Events**
 
-**click** - Fired when a pointing device button is pressed and released on an element.
+'click' Fired when a pointing device button is pressed and released on an element.
 
-**dblclick** - Fired when a pointing device button is clicked twice on an element.
+'dblclick' Fired when a pointing device button is clicked twice on an element.
 
-**mousedown** - Fired when a pointing device button is pressed on an element.
+'mousedown' Fired when a pointing device button is pressed on an element.
 
-**mouseuop** - Fired when a pointing device button is released over an element.
+'mouseuop' Fired when a pointing device button is released over an element.
 
-**mouseover** - Fired when a pointing device is moved onto an element.
+'mouseover' Fired when a pointing device is moved onto an element.
 
-**mouseout** - Fired when a pointing device is moved off an element.
+'mouseout' Fired when a pointing device is moved off an element.
 
-**mousemove** - Fired when a pointing device is moved while over an element.
+'mousemove' Fired when a pointing device is moved while over an element.
 
 **Keyboard Events**
 
-**keydown** - Fired when a key is pressed.
+'keydown' Fired when a key is pressed.
 
-**keyup** - Fired when a key is released.
+'keyup' Fired when a key is released.
 
-**keypress** - Fired when a key is pressed down and released.
+'keypress' Fired when a key is pressed down and released.
 
 **Form Events**
 
-**submit** - Fired when a form is submitted.
+'submit' Fired when a form is submitted.
 
-**change** - Fired when the value of an element has been changed.
+'change' Fired when the value of an element has been changed.
 
-**focus** - Fired when an element has received focus.
+'focus' Fired when an element has received focus.
 
-**blur** - Fired when an element has lost focus.
+'blur' Fired when an element has lost focus.
 
-**input** - Fired when the value of an `<input>`, `<textarea>`, or `<select>` element is changed.
+'input' Fired when the value of an `<input>`, `<textarea>`, or `<select>` element is changed.
 
 **Touch Events** for touch-enabled devices
 
-**touchstart** - Fired when a touch point is placed on the touch surface.
+'touchstart' Fired when a touch point is placed on the touch surface.
 
-**touchend** - Fired when a touch point is removed from the touch surface.
+'touchend' Fired when a touch point is removed from the touch surface.
 
-**touchmove** - Fired when a touch point is moved along the touch surface.
+'touchmove' Fired when a touch point is moved along the touch surface.
 
-**touchcancel** - Fired when a touch point has been disrupted in some way.
+'touchcancel' Fired when a touch point has been disrupted in some way.
 
 **Window Events**
 
-**load** - Fired when the whole page has loaded.
+'load' Fired when the whole page has loaded.
 
-**resize** - Fired when the document view is resized.
+'resize' Fired when the document view is resized.
 
-**scroll** - Fired when the document view or an element is scrolled.
+'scroll' Fired when the document view or an element is scrolled.
 
-**unload** - Fired when the document or a child resource is being unloaded.
+'unload' Fired when the document or a child resource is being unloaded.
 
 **Clipboard Events**
 
-**copy** - Fired when a copy action is initiated.
+'copy' Fired when a copy action is initiated.
 
-**cut** - Fired when a cut action is initiated.
+'cut' Fired when a cut action is initiated.
 
-**paste** - Fired when a paste action is initiated.
+'paste' Fired when a paste action is initiated.
 
 **Drag and Drop Events**
 
-**drag** - Fired when an element or text selection is being dragged.
+'drag' Fired when an element or text selection is being dragged.
 
-**dragend** - Fired when a drag operation is being ended (by releasing a mouse button or hitting the escape key).
+'dragend' Fired when a drag operation is being ended (by releasing a mouse button or hitting the escape key).
 
-**dragenter** - Fired when a dragged element or text selection enters a valid drop target.
+'dragenter' Fired when a dragged element or text selection enters a valid drop target.
 
-**dragover** - Fired when an element or text selection is being dragged over a valid drop target.
+'dragover' Fired when an element or text selection is being dragged over a valid drop target.
 
-**dragleave** - Fired when a dragged element or text selection leaves a valid drop target.
+'dragleave' Fired when a dragged element or text selection leaves a valid drop target.
 
-**drop** - Fired when an element or text selection is dropped on a valid drop target.
+'drop' Fired when an element or text selection is dropped on a valid drop target.
 
 ## Example of Adding Event Listeners in TypeScript
 
