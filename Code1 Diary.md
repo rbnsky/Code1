@@ -210,50 +210,69 @@ Using arrays, we separated the text content from our code (which we haven't quit
 ## TypeScript Event Commands
 
 **Mouse Events**
-- `click` - Fired when a pointing device button is pressed and released on an element.
-- `dblclick` - Fired when a pointing device button is clicked twice on an element.
-- `mousedown` - Fired when a pointing device button is pressed on an element.
-- `mouseup` - Fired when a pointing device button is released over an element.
-- `mouseover` - Fired when a pointing device is moved onto an element.
-- `mouseout` - Fired when a pointing device is moved off an element.
-- `mousemove` - Fired when a pointing device is moved while over an element.
+**click** - Fired when a pointing device button is pressed and released on an element.
+**dblclick** - Fired when a pointing device button is clicked twice on an element.
+**mousedown** - Fired when a pointing device button is pressed on an element.
+**mouseuop** - Fired when a pointing device button is released over an element.
+**mouseover** - Fired when a pointing device is moved onto an element.
+**mouseout** - Fired when a pointing device is moved off an element.
+**mousemove** - Fired when a pointing device is moved while over an element.
 
 **Keyboard Events**
-- `keydown` - Fired when a key is pressed.
-- `keyup` - Fired when a key is released.
-- `keypress` - Fired when a key is pressed down and released.
+**keydown** - Fired when a key is pressed.
+**keyup** - Fired when a key is released.
+**keypress** - Fired when a key is pressed down and released.
 
 **Form Events**
-- `submit` - Fired when a form is submitted.
-- `change` - Fired when the value of an element has been changed.
-- `focus` - Fired when an element has received focus.
-- `blur` - Fired when an element has lost focus.
-- `input` - Fired when the value of an `<input>`, `<textarea>`, or `<select>` element is changed.
+**submit** - Fired when a form is submitted.
+**change** - Fired when the value of an element has been changed.
+**focus** - Fired when an element has received focus.
+**blur** - Fired when an element has lost focus.
+**input** - Fired when the value of an `<input>`, `<textarea>`, or `<select>` element is changed.
 
 **Touch Events** for touch-enabled devices
-- `touchstart` - Fired when a touch point is placed on the touch surface.
-- `touchend` - Fired when a touch point is removed from the touch surface.
-- `touchmove` - Fired when a touch point is moved along the touch surface.
-- `touchcancel` - Fired when a touch point has been disrupted in some way.
+**touchstart** - Fired when a touch point is placed on the touch surface.
+**touchend** - Fired when a touch point is removed from the touch surface.
+**touchmove** - Fired when a touch point is moved along the touch surface.
+**touchcancel** - Fired when a touch point has been disrupted in some way.
 
 **Window Events**
-- `load` - Fired when the whole page has loaded.
-- `resize` - Fired when the document view is resized.
-- `scroll` - Fired when the document view or an element is scrolled.
-- `unload` - Fired when the document or a child resource is being unloaded.
+**load** - Fired when the whole page has loaded.
+**resize** - Fired when the document view is resized.
+**scroll** - Fired when the document view or an element is scrolled.
+**unload** - Fired when the document or a child resource is being unloaded.
 
 **Clipboard Events**
-- `copy` - Fired when a copy action is initiated.
-- `cut` - Fired when a cut action is initiated.
-- `paste` - Fired when a paste action is initiated.
+**copy** - Fired when a copy action is initiated.
+**cut** - Fired when a cut action is initiated.
+**paste** - Fired when a paste action is initiated.
 
 **Drag and Drop Events**
-- `drag` - Fired when an element or text selection is being dragged.
-- `dragend` - Fired when a drag operation is being ended (by releasing a mouse button or hitting the escape key).
-- `dragenter` - Fired when a dragged element or text selection enters a valid drop target.
-- `dragover` - Fired when an element or text selection is being dragged over a valid drop target.
-- `dragleave` - Fired when a dragged element or text selection leaves a valid drop target.
-- `drop` - Fired when an element or text selection is dropped on a valid drop target.
+**drag** - Fired when an element or text selection is being dragged.
+**dragend** - Fired when a drag operation is being ended (by releasing a mouse button or hitting the escape key).
+**dragenter** - Fired when a dragged element or text selection enters a valid drop target.
+**dragover** - Fired when an element or text selection is being dragged over a valid drop target.
+**dragleave** - Fired when a dragged element or text selection leaves a valid drop target.
+**drop** - Fired when an element or text selection is dropped on a valid drop target.
+
+## Example of Adding Event Listeners in TypeScript
+
+**An example demonstrating how to add event listeners for events in TypeScript**
+
+```typescript
+let button = document.querySelector<HTMLButtonElement>('#myButton')!;
+button.addEventListener('click', () => {
+    console.log('Button clicked!');
+});
+
+let input = document.querySelector<HTMLInputElement>('#myInput')!;
+input.addEventListener('input', () => {
+    console.log('Input changed:', input.value);
+});
+
+window.addEventListener('resize', () => {
+    console.log('Window resized!');
+});
 
 
 
