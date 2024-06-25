@@ -1,3 +1,5 @@
+"use strict";
+
 let spanElement = document.querySelector<HTMLSpanElement>("#IdHello")!;
 spanElement.textContent = "World";
 
@@ -5,15 +7,14 @@ let newSpan: HTMLSpanElement = document.createElement("span");
 newSpan.textContent = "Hello";
 document.body.appendChild(newSpan);
 newSpan.style.backgroundColor = "red";
-
 console.log(newSpan);
 
-function getRandomInt(min: number, max: number): number {
+function getRandomInt(min: number, max: number): number { //creates a random number
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function getRandomColor(): string {
-    const letters = '0123456789ABCDEF';
+function getRandomColor(): string { // Function to get a random hex color code
+    const letters = '0123456789ABCDEF'; //numbers/letters found in a hex code
     let color = '#';
     for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
@@ -21,18 +22,20 @@ function getRandomColor(): string {
     return color;
 }
 
-function createRandomElements(): void {
-    const numElements: number = getRandomInt(1, 2000);
-    const container: HTMLElement = document.body;
+function createRandomElements(): void { // Function to create a random number of elements with random properties
+    const numElements = getRandomInt(1, 500000);  // Integer for amount of Hello World's
+    const container = document.body;
     for (let i = 0; i < numElements; i++) {
-        const element: HTMLElement = document.createElement(Math.random() > 0.5 ? 'div' : 'span');
+        const element = document.createElement(Math.random() > 0.5 ? 'div' : 'span');
         element.textContent = `Hello World ${i + 1}`;
         element.style.position = 'absolute';
-        element.style.left = `${getRandomInt(0, window.innerWidth - 50)}px`;
-        element.style.top = `${getRandomInt(0, window.innerHeight - 50)}px`;
+        element.style.left = `${getRandomInt(0, window.innerWidth - 1)}px`;
+        element.style.top = `${getRandomInt(0, window.innerHeight - 1)}px`;
         element.style.backgroundColor = getRandomColor();
         element.style.color = getRandomColor();
-        element.style.padding = '10px';
+        element.style.padding = '1px';
+        element.style.fontFamily = 'Roboto, sans-serif';
+        element.style.fontSize = '1px';
         container.appendChild(element);
     }
 }

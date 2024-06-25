@@ -10,7 +10,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 function getRandomColor() {
-    const letters = '0123456789ABCDEF';
+    const letters = '0123456789ABCDEF'; //numbers/letters found in a hex code
     let color = '#';
     for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
@@ -18,17 +18,19 @@ function getRandomColor() {
     return color;
 }
 function createRandomElements() {
-    const numElements = getRandomInt(1, 2000);
+    const numElements = getRandomInt(1, 500000); // Integer for amount of Hello World's
     const container = document.body;
     for (let i = 0; i < numElements; i++) {
         const element = document.createElement(Math.random() > 0.5 ? 'div' : 'span');
         element.textContent = `Hello World ${i + 1}`;
         element.style.position = 'absolute';
-        element.style.left = `${getRandomInt(0, window.innerWidth - 50)}px`;
-        element.style.top = `${getRandomInt(0, window.innerHeight - 50)}px`;
+        element.style.left = `${getRandomInt(0, window.innerWidth - 1)}px`;
+        element.style.top = `${getRandomInt(0, window.innerHeight - 1)}px`;
         element.style.backgroundColor = getRandomColor();
         element.style.color = getRandomColor();
-        element.style.padding = '10px';
+        element.style.padding = '1px';
+        element.style.fontFamily = 'Roboto, sans-serif';
+        element.style.fontSize = '1px';
         container.appendChild(element);
     }
 }
