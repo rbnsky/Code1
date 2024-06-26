@@ -1,11 +1,4 @@
 "use strict";
-let spanElement = document.querySelector("#IdHello");
-spanElement.textContent = "World";
-let newSpan = document.createElement("span");
-newSpan.textContent = "Hello";
-document.body.appendChild(newSpan);
-newSpan.style.backgroundColor = "red";
-console.log(newSpan);
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -18,8 +11,8 @@ function getRandomColor() {
     return color;
 }
 function createRandomElements() {
-    const randomWords = ["Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliet", "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", "Victor", "Whiskey", "X-ray", "Yankee", "Zulu"];
-    const numElements = getRandomInt(30, 50); // Integer for amount of random words
+    const randomWords = ["milk", "flour", "sugar", "eggs", "dough", "chocolate,", "rice", "carrots", "potatos"];
+    const numElements = getRandomInt(30, 50); // Integer for amount of random ingedients
     const container = document.body;
     for (let i = 0; i < numElements; i++) {
         const element = document.createElement(Math.random() > 0.5 ? 'div' : 'span');
