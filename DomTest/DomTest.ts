@@ -1,13 +1,5 @@
 "use strict";
 
-let spanElement = document.querySelector("#IdHello");
-spanElement.textContent = "World";
-let newSpan = document.createElement("span");
-newSpan.textContent = "Hello";
-document.body.appendChild(newSpan);
-newSpan.style.backgroundColor = "red";
-console.log(newSpan);
-
 function getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
