@@ -284,7 +284,7 @@ Using arrays, we separated the text content from our code (which we haven't quit
 
 'dragleave' Fired when a dragged element or text selection leaves a valid drop target.
 
-'drop' Fired when an element or text selection is dropped on a valid drop target.
+`drop` Fired when an element or text selection is dropped on a valid drop target.
 
 ## Example of Adding Event Listeners in TypeScript
 
@@ -304,6 +304,8 @@ input.addEventListener('input', () => {
 window.addEventListener('resize', () => {
     console.log('Window resized!');
 });
+
+```
 
 #
 
