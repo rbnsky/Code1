@@ -22,8 +22,8 @@ function getRandomColor(): string {
 }
 
 function createRandomElements() {
-    const randomWords = ["Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliet", "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", "Victor", "Whiskey", "X-ray", "Yankee", "Zulu"];
-    const numElements = getRandomInt(30, 50); // Integer for amount of random words
+    const randomWords = ["milk","flour","sugar","eggs","dough","chocolate,","rice","carrots","potatos"];
+    const numElements = getRandomInt(30, 50); // Integer for amount of random ingedients
     const container = document.body;
     for (let i = 0; i < numElements; i++) {
         const element = document.createElement(Math.random() > 0.5 ? 'div' : 'span');
