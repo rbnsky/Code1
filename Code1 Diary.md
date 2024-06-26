@@ -305,6 +305,25 @@ window.addEventListener('resize', () => {
     console.log('Window resized!');
 });
 
+#
+
+*26.06.2024*
+
+*DAY SEVEN*
+
+## Planning Pojects using Diagrams
+
+Today we learned how to plan larger projects using Diagrams.
+
+In the **Use-Case Diagram** we note which Inputs the user can enter into the site.
+
+In the **UI Scribble** we planned the look of the website as well as what Elements go where, including some information about these elements are used for.
+
+In the **[Actvity Diagram](https://miro.com/app/board/uXjVK4f6WN0=/)** we planned each step the website takes after recieveing the users inputs.
+
+
+
+
 
 
 
