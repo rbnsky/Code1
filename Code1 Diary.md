@@ -20,8 +20,7 @@ Visual Studio is a Coding GUI that helps users understanding and reading code.
 
 **TypeScript**
 
-TypeScript is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript           applications for any browser, for any host, on any OS. 
-TypeScript compiles to readable, standards-based JavaScript.
+TypeScript is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript.
 
 ## What we learned
 
@@ -38,15 +37,15 @@ We learned:
 
 ## Vocabulary
 
-**stage** - Look at your code before committing. Only staged code is committed.
+`stage` Look at your code before committing. Only staged code is committed.
 
-**commit** - Finishes the changes to a file.
+`commit` Finishes the changes to a file.
 
-**fetch** - Downloads a file version and stores it in an alternate branch.
+`fetch` Downloads a file version and stores it in an alternate branch.
 
-**pull** - Fetches and merges with current Version.
+`pull` Fetches and merges with current Version.
 
-**push** - Uploads committed code.
+`push` Uploads committed code.
 
 #
  
@@ -134,25 +133,25 @@ To start the game, press [play](https://matbudimir.github.io/0Sugar/Branchgame/i
 
 Here are some basic Properties that can be changed in CSS:
 
-**background** - A shorthand for background properties like color, image, and position.
+`background`                    A shorthand for background properties like color, image, and position.
 
-**border** - A shorthand for border width, style, and color.
+`border`                        A shorthand for border width, style, and color.
 
-**animation** - Controls animation properties like duration, timing function, and iteration count.
+`animation`                     Controls animation properties like duration, timing function, and iteration count.
 
-**font** - Sets font properties such as family, size, weight, and style.
+`font`                          Sets font properties such as family, size, weight, and style.
 
-**margin** - and padding: Define spacing around elements.
+`margin`                        Creates space around elements, outside of any defined borders.
 
-**color** - Specifies text color.
+`color`                         Specifies text color.
 
-**display** - Determines how an element is displayed (e.g., block, inline, flex).
+`display`                       Determines how an element is displayed (e.g., block, inline, flex).
 
-**position** - Positions elements (relative, absolute, fixed).
+`position*`                     Positions elements (relative, absolute, fixed).
 
-**width, height, and max-width** - Control dimensions.
+`width, height, and max-width*` Control dimensions.
 
-**text-align** - Aligns text (left, right, center).
+`text-align`                    Aligns text (left, right, center).
 
 ## What does "cascading" mean in CSS?
 
@@ -163,11 +162,17 @@ This means that CSS has an inherent hierarchy and styles of a higher precedence 
 ## Selectors in CSS
 
 `Tag`
+
 `Id`
+
 `Class`
+
 `Pseudo`
+
 `Universal`
-`Hierarchy'
+
+`Hierarchy`
+
 `Attributes`
 
 ## Updates to my Repository Website
@@ -210,81 +215,81 @@ Using arrays, we separated the text content from our code (which we haven't quit
 
 **Mouse Events**
 
-`click` Fired when a pointing device button is pressed and released on an element.
+`click`         Fired when a pointing device button is pressed and released on an element.
 
-`dblclick` Fired when a pointing device button is clicked twice on an element.
+`dblclick`      Fired when a pointing device button is clicked twice on an element.
 
-`mousedown` Fired when a pointing device button is pressed on an element.
+`mousedown`     Fired when a pointing device button is pressed on an element.
 
-`mouseuop` Fired when a pointing device button is released over an element.
+`mouseuop`      Fired when a pointing device button is released over an element.
 
-`mouseover` Fired when a pointing device is moved onto an element.
+`mouseover`     Fired when a pointing device is moved onto an element.
 
-`mouseout` Fired when a pointing device is moved off an element.
+`mouseout`      Fired when a pointing device is moved off an element.
 
-`mousemove` Fired when a pointing device is moved while over an element.
+`mousemove`     Fired when a pointing device is moved while over an element.
 
 **Keyboard Events**
 
-`keydown` Fired when a key is pressed.
+`keydown`       Fired when a key is pressed.
 
-`keyup` Fired when a key is released.
+`keyup`         Fired when a key is released.
 
-`keypress` Fired when a key is pressed down and released.
+`keypress`      Fired when a key is pressed down and released.
 
 **Form Events**
 
-`submit` Fired when a form is submitted.
+`submit`        Fired when a form is submitted.
 
-`change` Fired when the value of an element has been changed.
+`change`        Fired when the value of an element has been changed.
 
-`focus` Fired when an element has received focus.
+`focus`         Fired when an element has received focus.
 
-`blur` Fired when an element has lost focus.
+`blur`          Fired when an element has lost focus.
 
-`input` Fired when the value of an `<input>`, `<textarea>`, or `<select>` element is changed.
+`input`         Fired when the value of an `<input>`, `<textarea>`, or `<select>` element is changed.
 
 **Touch Events** for touch-enabled devices
 
-`touchstart` Fired when a touch point is placed on the touch surface.
+`touchstart`    Fired when a touch point is placed on the touch surface.
 
-`touchend` Fired when a touch point is removed from the touch surface.
+`touchend`      Fired when a touch point is removed from the touch surface.
 
-`touchmove` Fired when a touch point is moved along the touch surface.
+`touchmove`     Fired when a touch point is moved along the touch surface.
 
-`touchcancel` Fired when a touch point has been disrupted in some way.
+`touchcancel`   Fired when a touch point has been disrupted in some way.
 
 **Window Events**
 
-`load` Fired when the whole page has loaded.
+`load`          Fired when the whole page has loaded.
 
-`resize` Fired when the document view is resized.
+`resize`        Fired when the document view is resized.
 
-`scroll` Fired when the document view or an element is scrolled.
+`scroll`        Fired when the document view or an element is scrolled.
 
-`unload` Fired when the document or a child resource is being unloaded.
+`unload`        Fired when the document or a child resource is being unloaded.
 
 **Clipboard Events**
 
-`copy` Fired when a copy action is initiated.
+`copy`          Fired when a copy action is initiated.
 
-`cut` Fired when a cut action is initiated.
+`cut`           Fired when a cut action is initiated.
 
-`paste` Fired when a paste action is initiated.
+`paste`         Fired when a paste action is initiated.
 
 **Drag and Drop Events**
 
-`drag` Fired when an element or text selection is being dragged.
+`drag`          Fired when an element or text selection is being dragged.
 
-`dragend` Fired when a drag operation is being ended (by releasing a mouse button or hitting the escape key).
+`dragend`       Fired when a drag operation is being ended (by releasing a mouse button or hitting the escape key).
 
-`dragenter` Fired when a dragged element or text selection enters a valid drop target.
+`dragenter`     Fired when a dragged element or text selection enters a valid drop target.
 
-`dragover` Fired when an element or text selection is being dragged over a valid drop target.
+`dragover`      Fired when an element or text selection is being dragged over a valid drop target.
 
-`dragleave` Fired when a dragged element or text selection leaves a valid drop target.
+`dragleave`     Fired when a dragged element or text selection leaves a valid drop target.
 
-`drop` Fired when an element or text selection is dropped on a valid drop target.
+`drop`          Fired when an element or text selection is dropped on a valid drop target.
 
 ## Example of Adding Event Listeners in TypeScript
 
@@ -323,7 +328,13 @@ In the **UI Scribble** we planned the look of the website as well as what Elemen
 
 In the **[Actvity Diagram](https://miro.com/app/board/uXjVK4f6WN0=/)** we planned each step the website takes after recieveing the users inputs.
 
+#
 
+*27.06.2024*
+
+*DAY EIGHT*
+
+## Planning Pojects using Diagrams
 
 
 

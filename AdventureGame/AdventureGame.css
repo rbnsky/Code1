@@ -1,0 +1,55 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    text-align: center;
+    width: 80%;
+    height: 80%;
+    background: url('placeholder_image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px #000;
+}
+
+#story-text {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: white;
+    text-shadow: 2px 2px 4px #000;
+}
+
+#choices {
+    display: flex;
+    justify-content: space-between;
+}
+
+#choices a {
+    display: block;
+    width: 45%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 1.2em;
+    color: black;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#choices a:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
