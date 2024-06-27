@@ -55,15 +55,15 @@ We learned:
 
 ## Remove uncommitted changes in Git
 
-- The git stash command, which saves uncommitted changes and reset your workspace.
-- The git reset command, which only touches tracked files.
-- The git clean command, that deletes every untracked file (May require -f to force the action).
+- The `git stash` command, which saves uncommitted changes and reset your workspace.
+- The `git reset` command, which only touches tracked files.
+- The `git clean` command, that deletes every untracked file (May require -f to force the action).
 
 ## Removing Untracked Files
-- Run git clean -n to see a dry run.
-- Run git clean -f to force untracked file deletion.
-- Use git clean -f -d to remove untracked directories.
-- Use git clean -f -x to remove untracked . gitignore files.
+- Run `git clean -n` to see a dry run.
+- Run `git clean -f` to force untracked file deletion.
+- Use `git clean -f -d` to remove untracked directories.
+- Use `git clean -f -x` to remove untracked . gitignore files.
 - Add the -i switch to do an interactive git clean.
 
 ## Merge Strategies
@@ -334,8 +334,7 @@ In the **[Actvity Diagram](https://miro.com/app/board/uXjVK4f6WN0=/)** we planne
 
 *DAY EIGHT*
 
-## Planning Pojects using Diagrams
-
+## 
 
 
 
