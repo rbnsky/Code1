@@ -320,13 +320,19 @@ window.addEventListener('resize', () => {
 
 ## Planning Pojects using Diagrams
 
-Today we learned how to plan larger projects using Diagrams.
+Today we learned how to plan larger projects using diagrams.
 
 In the **Use-Case Diagram** we note which Inputs the user can enter into the site.
 
-In the **UI Scribble** we planned the look of the website as well as what Elements go where, including some information about these elements are used for.
+In the **UI Scribble** we planned the look of the website as well as what elements go where, including some information about these elements are used for.
 
-In the **[Actvity Diagram](https://miro.com/app/board/uXjVK4f6WN0=/)** we planned each step the website takes after recieveing the users inputs.
+In the **Actvity Diagram** we planned each step the website takes after recieveing the users inputs.
+
+## Connect 4
+
+Using what we learned, we created an **[Actvity Diagram](https://miro.com/app/board/uXjVK4f6WN0=/)** for our next project, a playable version of Connect 4 made using Typescritp, HTML and CSS.
+
+A work in progress version of our Connect 4 Game can be found [here](https://matbudimir.github.io/0Sugar/4Gwinnt/index.html).
 
 #
 
@@ -334,7 +340,13 @@ In the **[Actvity Diagram](https://miro.com/app/board/uXjVK4f6WN0=/)** we planne
 
 *DAY EIGHT*
 
-## 
+## Connect 4 Progress
+
+We continued working on our Connect 4 Game.
+
+## Canvas
+
+Today we created a [canvas](https://rbnsky.github.io/Code1/Canvas/Canvas.html) using Typescript.
 
 
 
