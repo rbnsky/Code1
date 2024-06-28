@@ -9,64 +9,241 @@ interface StoryNode {
 }
 
 const story: StoryNode[] = [
+    // Level 1
     {
-        title: "Start of the Adventure",
-        text: "You are standing at a crossroad. Which path will you take?",
+        title: "placeholder",
+        text: "placeholder",
         image: "path1.jpg",
         choices: [
-            { text: "Take the left path", nextNode: 1 },
-            { text: "Take the right path", nextNode: 2 }
+            { text: "placeholder", nextNode: 1 },
+            { text: "placeholder", nextNode: 2 }
+        ]
+    },
+    // Level 2
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "path2.jpg",
+        choices: [
+            { text: "placeholder", nextNode: 3 },
+            { text: "placeholder", nextNode: 4 }
         ]
     },
     {
-        title: "Left Path",
-        text: "You encounter a friendly dragon. What will you do?",
-        image: "dragon.jpg",
+        title: "placeholder",
+        text: "placeholder",
+        image: "path3.jpg",
         choices: [
-            { text: "Talk to the dragon", nextNode: 3 },
-            { text: "Run away", nextNode: 4 }
+            { text: "placeholder", nextNode: 5 },
+            { text: "placeholder", nextNode: 6 }
+        ]
+    },
+    // Level 3
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "path4.jpg",
+        choices: [
+            { text: "placeholder", nextNode: 7 },
+            { text: "placeholder", nextNode: 8 }
         ]
     },
     {
-        title: "Right Path",
-        text: "You find a treasure chest. What will you do?",
-        image: "treasure.jpg",
+        title: "placeholder",
+        text: "placeholder",
+        image: "path5.jpg",
         choices: [
-            { text: "Open the chest", nextNode: 5 },
-            { text: "Leave it alone", nextNode: 6 }
+            { text: "placeholder", nextNode: 9 },
+            { text: "placeholder", nextNode: 10 }
         ]
     },
     {
-        title: "Talk to the Dragon",
-        text: "The dragon shares its wisdom with you. You have completed your adventure!",
-        image: "wisdom.jpg",
+        title: "placeholder",
+        text: "placeholder",
+        image: "path6.jpg",
         choices: [
-            { text: "Restart", nextNode: 0 }
+            { text: "placeholder", nextNode: 11 },
+            { text: "placeholder", nextNode: 12 }
         ]
     },
     {
-        title: "Run Away",
-        text: "You safely return home, but without any adventure.",
-        image: "home.jpg",
+        title: "placeholder",
+        text: "placeholder",
+        image: "path7.jpg",
         choices: [
-            { text: "Restart", nextNode: 0 }
+            { text: "placeholder", nextNode: 13 },
+            { text: "placeholder", nextNode: 14 }
+        ]
+    },
+    // Level 4
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "path8.jpg",
+        choices: [
+            { text: "placeholder", nextNode: 15 },
+            { text: "placeholder", nextNode: 16 }
         ]
     },
     {
-        title: "Open the Chest",
-        text: "You find a rare gem inside. You have completed your adventure!",
-        image: "gem.jpg",
+        title: "placeholder",
+        text: "placeholder",
+        image: "path9.jpg",
         choices: [
-            { text: "Restart", nextNode: 0 }
+            { text: "placeholder", nextNode: 17 },
+            { text: "placeholder", nextNode: 18 }
         ]
     },
     {
-        title: "Leave it Alone",
-        text: "You walk away, always wondering what was inside.",
-        image: "mystery.jpg",
+        title: "placeholder",
+        text: "placeholder",
+        image: "path10.jpg",
         choices: [
-            { text: "Restart", nextNode: 0 }
+            { text: "placeholder", nextNode: 19 },
+            { text: "placeholder", nextNode: 20 }
         ]
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "path11.jpg",
+        choices: [
+            { text: "placeholder", nextNode: 21 },
+            { text: "placeholder", nextNode: 22 }
+        ]
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "path12.jpg",
+        choices: [
+            { text: "placeholder", nextNode: 23 },
+            { text: "placeholder", nextNode: 24 }
+        ]
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "path13.jpg",
+        choices: [
+            { text: "placeholder", nextNode: 25 },
+            { text: "placeholder", nextNode: 26 }
+        ]
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "path14.jpg",
+        choices: [
+            { text: "placeholder", nextNode: 27 },
+            { text: "placeholder", nextNode: 28 }
+        ]
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "path15.jpg",
+        choices: [
+            { text: "placeholder", nextNode: 29 },
+            { text: "placeholder", nextNode: 30 }
+        ]
+    },
+    // Endings
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "end1.jpg",
+        choices: []
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "end2.jpg",
+        choices: []
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "end3.jpg",
+        choices: []
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "end4.jpg",
+        choices: []
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "end5.jpg",
+        choices: []
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "end6.jpg",
+        choices: []
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "end7.jpg",
+        choices: []
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "end8.jpg",
+        choices: []
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "end9.jpg",
+        choices: []
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "end10.jpg",
+        choices: []
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "end11.jpg",
+        choices: []
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "end12.jpg",
+        choices: []
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "end13.jpg",
+        choices: []
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "end14.jpg",
+        choices: []
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "end15.jpg",
+        choices: []
+    },
+    {
+        title: "placeholder",
+        text: "placeholder",
+        image: "end16.jpg",
+        choices: []
     }
 ];
 
@@ -84,14 +261,17 @@ function loadNode(nodeIndex: number) {
     (document.getElementById("story-text") as HTMLElement).innerText = node.text;
     (document.getElementById("story-image") as HTMLImageElement).src = node.image;
 
-    const choice1Button = document.getElementById("choice1") as HTMLButtonElement;
-    const choice2Button = document.getElementById("choice2") as HTMLButtonElement;
+    node.choices.forEach((choice, index) => {
+        const button = document.getElementById(`choice${index + 1}`) as HTMLButtonElement;
+        button.innerText = choice.text;
+        button.style.display = "inline-block";
+        button.onclick = () => makeChoice(index);
+    });
 
-    choice1Button.innerText = node.choices[0]?.text || '';
-    choice1Button.onclick = () => makeChoice(0);
-
-    choice2Button.innerText = node.choices[1]?.text || '';
-    choice2Button.onclick = () => makeChoice(1);
+    for (let i = node.choices.length; i < 2; i++) {
+        const button = document.getElementById(`choice${i + 1}`) as HTMLButtonElement;
+        button.style.display = "none";
+    }
 }
 
 let currentNodeIndex = 0;
