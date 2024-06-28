@@ -12,10 +12,37 @@ interface StoryNode {
 }
 
 const titles = [
-    "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8",
-    "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16",
-    "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24",
-    "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32"
+    "The Adventure Begins",
+    "Take The Left Path",
+    "Take the Right Path",
+    "Accept the Fox's Offer",
+    "Decline the Fox's Offer",
+    "Confront the Goblins", 
+    "Sneak Past the Goblins", 
+    "Gather Herbs",
+    "Explore Further", 
+    "Cross the Bridge", 
+    "Find Another Way", 
+    "Play the Game",
+    "Fight the Goblins",
+    "Follow the Hidden Path",
+    "Return to the main path",
+    "Thank the Fox", 
+    "Part Ways", 
+    "Explore the Ruin", 
+    "Set Up Camp", 
+    "Enter the Cave",
+    "Keep Walking", 
+    "Take the Narrow Path", 
+    "Turn Back", 
+    "Accept the Treasure", 
+    "Decline the Treasure", 
+    "Claim their Treasure", 
+    "Leave Quickly", 
+    "Approach the Creatures",
+    "Observe from Afar", 
+    "Take the Left Fork", 
+    "Take the Right Fork", 
 ];
 
 const storyTexts = [
