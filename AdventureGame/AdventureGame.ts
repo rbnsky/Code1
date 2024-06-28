@@ -42,10 +42,11 @@ const choiceHeadlines = [
 ];
 
 const images = [
-    "path1.jpg", "path2.jpg", "path3.jpg", "path4.jpg", "path5.jpg", "path6.jpg", "path7.jpg", "path8.jpg",
-    "path9.jpg", "path10.jpg", "path11.jpg", "path12.jpg", "path13.jpg", "path14.jpg", "path15.jpg", "end1.jpg",
-    "end2.jpg", "end3.jpg", "end4.jpg", "end5.jpg", "end6.jpg", "end7.jpg", "end8.jpg", "end9.jpg", "end10.jpg",
-    "end11.jpg", "end12.jpg", "end13.jpg", "end14.jpg", "end15.jpg", "end16.jpg"
+    "images/1.jpg", "images/2A.jpg", "images/2B.jpg", "images/3A.jpg", "images/3B.jpg", "images/3C.jpg", "images/3D.jpg",
+    "images/4A.jpg", "images/4B.jpg", "images/4C.jpg", "images/4D.jpg", "images/4E.jpg", "images/4F.jpg", "images/4G.jpg",
+    "images/4H.jpg", "images/5A.jpg", "images/5B.jpg", "images/5C.jpg", "images/5D.jpg", "images/5E.jpg", "images/5F.jpg",
+    "images/5G.jpg", "images/5H.jpg", "images/5I.jpg", "images/5J.jpg", "images/5K.jpg", "images/5L.jpg", "images/5M.jpg",
+    "images/5N.jpg", "images/5O.jpg", "images/5P.jpg"
 ];
 
 const story: StoryNode[] = [
