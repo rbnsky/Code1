@@ -1,55 +1,45 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
 }
 
-#container {
-    text-align: center;
-    width: 80%;
-    height: 80%;
-    background: url('placeholder_image.jpg') no-repeat center center fixed;
-    background-size: cover;
+#game-container {
+    background: white;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
 }
 
-h1 {
-    margin-bottom: 20px;
-    color: white;
-    text-shadow: 2px 2px 4px #000;
+#story-image {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
 }
 
-#story-text {
-    font-size: 1.5em;
-    margin-bottom: 30px;
-    color: white;
-    text-shadow: 2px 2px 4px #000;
-}
-
-#choices {
+#choices-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-#choices a {
-    display: block;
-    width: 45%;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    font-size: 1.2em;
-    color: black;
-    border-radius: 5px;
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
     transition: background-color 0.3s;
 }
 
-#choices a:hover {
-    background-color: rgba(255, 255, 255, 1);
+button:hover {
+    background-color: #0056b3;
 }
