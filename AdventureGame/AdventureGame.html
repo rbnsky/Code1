@@ -4,19 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdventureGame</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&display=swap">
     <link rel="stylesheet" href="AdventureGame.css">
 </head>
 <body>
     <div id="game-container">
-        <h1 id="story-title">Loading...</h1>
+        <h1 id="story-title"></h1>
         <p id="story-text"></p>
         <img id="story-image" src="" alt="Story Image">
-        <div id="choices-container">
-            <button id="choice1">Choice 1</button>
-            <button id="choice2">Choice 2</button>
-        </div>
+        <button id="choice1" class="choice-button" title="Choice 1"></button>
+        <button id="choice2" class="choice-button" title="Choice 2"></button>
     </div>
-    <script src="script.js"></script>
+    <script src="AdventureGame.js"></script>
 </body>
 </html>

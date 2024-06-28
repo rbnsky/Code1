@@ -1,12 +1,14 @@
+interface Choice {
+    text: string;
+    headline: string;
+    nextNode: number;
+}
+
 interface StoryNode {
     title: string;
     text: string;
     image: string;
-    choices: {
-        text: string;
-        headline: string;
-        nextNode: number;
-    }[];
+    choices: Choice[];
 }
 
 const titles = [
