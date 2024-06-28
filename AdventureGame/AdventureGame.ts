@@ -4,6 +4,7 @@ interface StoryNode {
     image: string;
     choices: {
         text: string;
+        headline: string;
         nextNode: number;
     }[];
 }
@@ -33,236 +34,250 @@ const choiceTexts = [
     "Choice Text 31", "Choice Text 32"
 ];
 
+const choiceHeadlines = [
+    "Headline 1", "Headline 2", "Headline 3", "Headline 4", "Headline 5", "Headline 6", "Headline 7", "Headline 8",
+    "Headline 9", "Headline 10", "Headline 11", "Headline 12", "Headline 13", "Headline 14", "Headline 15", "Headline 16",
+    "Headline 17", "Headline 18", "Headline 19", "Headline 20", "Headline 21", "Headline 22", "Headline 23", "Headline 24",
+    "Headline 25", "Headline 26", "Headline 27", "Headline 28", "Headline 29", "Headline 30", "Headline 31", "Headline 32"
+];
+
+const images = [
+    "path1.jpg", "path2.jpg", "path3.jpg", "path4.jpg", "path5.jpg", "path6.jpg", "path7.jpg", "path8.jpg",
+    "path9.jpg", "path10.jpg", "path11.jpg", "path12.jpg", "path13.jpg", "path14.jpg", "path15.jpg", "end1.jpg",
+    "end2.jpg", "end3.jpg", "end4.jpg", "end5.jpg", "end6.jpg", "end7.jpg", "end8.jpg", "end9.jpg", "end10.jpg",
+    "end11.jpg", "end12.jpg", "end13.jpg", "end14.jpg", "end15.jpg", "end16.jpg"
+];
+
 const story: StoryNode[] = [
     {
         title: titles[0],
         text: storyTexts[0],
-        image: "path1.jpg",
+        image: images[0],
         choices: [
-            { text: choiceTexts[0], nextNode: 1 },
-            { text: choiceTexts[1], nextNode: 2 }
+            { text: choiceTexts[0], headline: choiceHeadlines[0], nextNode: 1 },
+            { text: choiceTexts[1], headline: choiceHeadlines[1], nextNode: 2 }
         ]
     },
     {
         title: titles[1],
         text: storyTexts[1],
-        image: "path2.jpg",
+        image: images[1],
         choices: [
-            { text: choiceTexts[2], nextNode: 3 },
-            { text: choiceTexts[3], nextNode: 4 }
+            { text: choiceTexts[2], headline: choiceHeadlines[2], nextNode: 3 },
+            { text: choiceTexts[3], headline: choiceHeadlines[3], nextNode: 4 }
         ]
     },
     {
         title: titles[2],
         text: storyTexts[2],
-        image: "path3.jpg",
+        image: images[2],
         choices: [
-            { text: choiceTexts[4], nextNode: 5 },
-            { text: choiceTexts[5], nextNode: 6 }
+            { text: choiceTexts[4], headline: choiceHeadlines[4], nextNode: 5 },
+            { text: choiceTexts[5], headline: choiceHeadlines[5], nextNode: 6 }
         ]
     },
     {
         title: titles[3],
         text: storyTexts[3],
-        image: "path4.jpg",
+        image: images[3],
         choices: [
-            { text: choiceTexts[6], nextNode: 7 },
-            { text: choiceTexts[7], nextNode: 8 }
+            { text: choiceTexts[6], headline: choiceHeadlines[6], nextNode: 7 },
+            { text: choiceTexts[7], headline: choiceHeadlines[7], nextNode: 8 }
         ]
     },
     {
         title: titles[4],
         text: storyTexts[4],
-        image: "path5.jpg",
+        image: images[4],
         choices: [
-            { text: choiceTexts[8], nextNode: 9 },
-            { text: choiceTexts[9], nextNode: 10 }
+            { text: choiceTexts[8], headline: choiceHeadlines[8], nextNode: 9 },
+            { text: choiceTexts[9], headline: choiceHeadlines[9], nextNode: 10 }
         ]
     },
     {
         title: titles[5],
         text: storyTexts[5],
-        image: "path6.jpg",
+        image: images[5],
         choices: [
-            { text: choiceTexts[10], nextNode: 11 },
-            { text: choiceTexts[11], nextNode: 12 }
+            { text: choiceTexts[10], headline: choiceHeadlines[10], nextNode: 11 },
+            { text: choiceTexts[11], headline: choiceHeadlines[11], nextNode: 12 }
         ]
     },
     {
         title: titles[6],
         text: storyTexts[6],
-        image: "path7.jpg",
+        image: images[6],
         choices: [
-            { text: choiceTexts[12], nextNode: 13 },
-            { text: choiceTexts[13], nextNode: 14 }
+            { text: choiceTexts[12], headline: choiceHeadlines[12], nextNode: 13 },
+            { text: choiceTexts[13], headline: choiceHeadlines[13], nextNode: 14 }
         ]
     },
     {
         title: titles[7],
         text: storyTexts[7],
-        image: "path8.jpg",
+        image: images[7],
         choices: [
-            { text: choiceTexts[14], nextNode: 15 },
-            { text: choiceTexts[15], nextNode: 16 }
+            { text: choiceTexts[14], headline: choiceHeadlines[14], nextNode: 15 },
+            { text: choiceTexts[15], headline: choiceHeadlines[15], nextNode: 16 }
         ]
     },
     {
         title: titles[8],
         text: storyTexts[8],
-        image: "path9.jpg",
+        image: images[8],
         choices: [
-            { text: choiceTexts[16], nextNode: 17 },
-            { text: choiceTexts[17], nextNode: 18 }
+            { text: choiceTexts[16], headline: choiceHeadlines[16], nextNode: 17 },
+            { text: choiceTexts[17], headline: choiceHeadlines[17], nextNode: 18 }
         ]
     },
     {
         title: titles[9],
         text: storyTexts[9],
-        image: "path10.jpg",
+        image: images[9],
         choices: [
-            { text: choiceTexts[18], nextNode: 19 },
-            { text: choiceTexts[19], nextNode: 20 }
+            { text: choiceTexts[18], headline: choiceHeadlines[18], nextNode: 19 },
+            { text: choiceTexts[19], headline: choiceHeadlines[19], nextNode: 20 }
         ]
     },
     {
         title: titles[10],
         text: storyTexts[10],
-        image: "path11.jpg",
+        image: images[10],
         choices: [
-            { text: choiceTexts[20], nextNode: 21 },
-            { text: choiceTexts[21], nextNode: 22 }
+            { text: choiceTexts[20], headline: choiceHeadlines[20], nextNode: 21 },
+            { text: choiceTexts[21], headline: choiceHeadlines[21], nextNode: 22 }
         ]
     },
     {
         title: titles[11],
         text: storyTexts[11],
-        image: "path12.jpg",
+        image: images[11],
         choices: [
-            { text: choiceTexts[22], nextNode: 23 },
-            { text: choiceTexts[23], nextNode: 24 }
+            { text: choiceTexts[22], headline: choiceHeadlines[22], nextNode: 23 },
+            { text: choiceTexts[23], headline: choiceHeadlines[23], nextNode: 24 }
         ]
     },
     {
         title: titles[12],
         text: storyTexts[12],
-        image: "path13.jpg",
+        image: images[12],
         choices: [
-            { text: choiceTexts[24], nextNode: 25 },
-            { text: choiceTexts[25], nextNode: 26 }
+            { text: choiceTexts[24], headline: choiceHeadlines[24], nextNode: 25 },
+            { text: choiceTexts[25], headline: choiceHeadlines[25], nextNode: 26 }
         ]
     },
     {
         title: titles[13],
         text: storyTexts[13],
-        image: "path14.jpg",
+        image: images[13],
         choices: [
-            { text: choiceTexts[26], nextNode: 27 },
-            { text: choiceTexts[27], nextNode: 28 }
+            { text: choiceTexts[26], headline: choiceHeadlines[26], nextNode: 27 },
+            { text: choiceTexts[27], headline: choiceHeadlines[27], nextNode: 28 }
         ]
     },
     {
         title: titles[14],
         text: storyTexts[14],
-        image: "path15.jpg",
+        image: images[14],
         choices: [
-            { text: choiceTexts[28], nextNode: 29 },
-            { text: choiceTexts[29], nextNode: 30 }
+            { text: choiceTexts[28], headline: choiceHeadlines[28], nextNode: 29 },
+            { text: choiceTexts[29], headline: choiceHeadlines[29], nextNode: 30 }
         ]
     },
     {
         title: titles[15],
         text: storyTexts[15],
-        image: "end1.jpg",
+        image: images[15],
         choices: []
     },
     {
         title: titles[16],
         text: storyTexts[16],
-        image: "end2.jpg",
+        image: images[16],
         choices: []
     },
     {
         title: titles[17],
         text: storyTexts[17],
-        image: "end3.jpg",
+        image: images[17],
         choices: []
     },
     {
         title: titles[18],
         text: storyTexts[18],
-        image: "end4.jpg",
+        image: images[18],
         choices: []
     },
     {
         title: titles[19],
         text: storyTexts[19],
-        image: "end5.jpg",
+        image: images[19],
         choices: []
     },
     {
         title: titles[20],
         text: storyTexts[20],
-        image: "end6.jpg",
+        image: images[20],
         choices: []
     },
     {
         title: titles[21],
         text: storyTexts[21],
-        image: "end7.jpg",
+        image: images[21],
         choices: []
     },
     {
         title: titles[22],
         text: storyTexts[22],
-        image: "end8.jpg",
+        image: images[22],
         choices: []
     },
     {
         title: titles[23],
         text: storyTexts[23],
-        image: "end9.jpg",
+        image: images[23],
         choices: []
     },
     {
         title: titles[24],
         text: storyTexts[24],
-        image: "end10.jpg",
+        image: images[24],
         choices: []
     },
     {
         title: titles[25],
         text: storyTexts[25],
-        image: "end11.jpg",
+        image: images[25],
         choices: []
     },
     {
         title: titles[26],
         text: storyTexts[26],
-        image: "end12.jpg",
+        image: images[26],
         choices: []
     },
     {
         title: titles[27],
         text: storyTexts[27],
-        image: "end13.jpg",
+        image: images[27],
         choices: []
     },
     {
         title: titles[28],
         text: storyTexts[28],
-        image: "end14.jpg",
+        image: images[28],
         choices: []
     },
     {
         title: titles[29],
         text: storyTexts[29],
-        image: "end15.jpg",
+        image: images[29],
         choices: []
     },
     {
         title: titles[30],
         text: storyTexts[30],
-        image: "end16.jpg",
+        image: images[30],
         choices: []
     }
 ];
@@ -283,7 +298,7 @@ function loadNode(nodeIndex: number) {
 
     node.choices.forEach((choice, index) => {
         const button = document.getElementById(`choice${index + 1}`) as HTMLButtonElement;
-        button.innerText = choice.text;
+        button.innerHTML = `<strong>${choice.headline}:</strong> ${choice.text}`;
         button.style.display = "inline-block";
         button.onclick = () => makeChoice(index);
     });
