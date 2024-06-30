@@ -46,12 +46,37 @@ const titles = [
 ];
 
 const storyTexts = [
-    "Story Text 1", "Story Text 2", "Story Text 3", "Story Text 4", "Story Text 5", "Story Text 6",
-    "Story Text 7", "Story Text 8", "Story Text 9", "Story Text 10", "Story Text 11", "Story Text 12",
-    "Story Text 13", "Story Text 14", "Story Text 15", "Story Text 16", "Story Text 17", "Story Text 18",
-    "Story Text 19", "Story Text 20", "Story Text 21", "Story Text 22", "Story Text 23", "Story Text 24",
-    "Story Text 25", "Story Text 26", "Story Text 27", "Story Text 28", "Story Text 29", "Story Text 30",
-    "Story Text 31", "Story Text 32"
+"You find yourself standing at the edge of an enchanted forest. You've heard tales of great treasures and magical creatures that lie within. Before you are two paths:",
+    "As you walk along the left path, you come across a talking fox. The fox offers to guide you through the forest in exchange for a favor.",
+    "As you proceed down the right path, you encounter a group of goblins who seem to be guarding something precious.",
+    "The fox guides you to a hidden grove filled with rare herbs and plants.",
+    "You come across a rickety bridge over a deep chasm. A sign warns of the bridge's instability.",
+    "The goblins challenge you to a game of wits. If you win, they will let you pass and share their treasure.",
+    "You successfully sneak past the goblins and find a hidden path leading deeper into the forest.",
+    "You collect several rare herbs, which might be useful for healing or other purposes.",
+    "The fox leads you to an ancient ruin covered in vines.",
+    "You safely cross the bridge. As you walk below a large rock formation, you spot a mysterious cave on the left.",
+    "You find a narrow path that winds down the side of the chasm.",
+    "You win the game and the goblins reward you with a piece of their treasure.",
+    "You defeat the goblins. The treasure is yours to take, but it seems suspicious. Could it be a trap?",
+    "The hidden path leads you to a secret glade filled with magical creatures.",
+    "You return to the main path and soon find a fork in the road.",
+    "As a parting gift, the fox gives you a magical charm. \n\n You put on the charm, feeling its protective power. \n\n With the charm's protection, you safely navigate the rest of the forest and find the treasure you've been seeking. \n\n Your adventure ends with you richer and wiser, ready for the next challenge. \n\n The End.",
+    "You bid farewell to the fox and continue your journey alone, feeling more confident.\n\nYou decide to head north, following a new path.\n\nOn your way, you discover a hidden village where you are welcomed warmly.\n\nYou share your collected herbs and find a new place to call home.\n\nThe End.",
+    "Inside the ruin, you find an ancient artifact that pulses with magical energy.\n\nYou take the artifact, feeling its power.\n\nThe artifact grants you immense power, which you use to protect the forest and its creatures.\n\nYou become a legendary guardian known throughout the land.\n\nThe End.",
+    "You set up camp and have a restful night, feeling rejuvenated the next morning.\n\nExploring the surroundings, you find a hidden entrance to an underground network of caves filled with treasure.\n\nYour journey ends with you richer than you ever imagined.\n\nThe End.",
+    "In the cave, you find a hidden chamber with ancient glowing writings on the walls.\n\nYou try to decipher the ancient text.\n\nDeciphering the text reveals a long-lost spell that grants you great wisdom and insight.\n\nYou become a renowned scholar and wizard, respected by all.\n\nThe End.",
+    "You find a hidden grove filled with beautiful, exotic flowers.\n\nYou pick a few, thinking they might be useful.\n\nAs it turns out, the flowers you pick have magical properties that heal and protect you throughout your journey.\n\nYou safely return home, celebrated for your rare finds.\n\nThe End.",
+    "The narrow path leads you to a hidden waterfall.\n\nYou take a refreshing bath in the pool beneath the waterfall.\n\nAs you swim closer to the waterfall, you discover a hidden cave behind it, filled with ancient treasures.\n\nYou return home a wealthy and celebrated adventurer.\n\nThe End.",
+    "You find another route that leads to an old stone bridge...\n\nCrossing the bridge, you find a new path that leads you out of the forest. \n\nYou return home with incredible stories and valuable experiences.\n\nThe End.",
+    "You accept the goblins' treasure and continue your journey.\n\nYou hide it to use later.\n\nThe treasure helps you in times of need, bringing prosperity and safety to your future endeavors.\n\nWith its protection, you become a legendary adventurer in your homeland.\n\nThe End.",
+    "You refuse the treasure and continue your journey with a clear conscience.\n\nYou thank the goblins and move on.\n\nYour gratitude earns you the goblins' respect.\n\nThey guide you safely through the forest, and you return home with valuable knowledge and friendships.\n\nThe End.",
+    "You claim the treasure as your own and take it back home with you.\n\nIt brings great wealth and allows you to improve the lives of those in your village.\n\nYou become a celebrated hero.\n\nThe End.",
+    "You leave the area as fast as you can.\n\nYou keep moving, not wanting to risk stopping.\n\nYour caution ensures your safety.\n\nYou navigate through the forest and find your way home, your tales of adventure inspiring others.\n\nThe End.",
+    "The magical creatures welcome you and offer to share their wisdom.\n\nThe knowledge you gain from the creatures helps you greatly in your journey.\n\nYou return home wiser and become a respected sage.\n\nThe End.",
+    "You watch the creatures, learning from their behavior without disturbing them.\n\nYou take detailed notes on what you observe.\n\nYour notes become valuable research that brings you fame as a scholar.\n\nYou return home and share your discoveries, gaining great respect.\n\nThe End.",
+    "The left fork leads you to a tranquil glade with a crystal-clear pond.\n\nYou explore the glade, looking for any hidden secrets.\n\nYour exploration leads to the discovery of ancient runes that grant you powerful knowledge.\n\nYou return home and use this knowledge to become a respected leader.\n\nThe End.",
+    "The right fork leads you to a dense thicket.\n\nYou push through the thicket, determined to see what lies beyond.\n\nBeyond the thicket, you find a hidden village where you are welcomed and celebrated.\n\nYou share your stories and live a life of peace and prosperity.\n\nThe End.",
 ];
 
 const choiceTexts = [
