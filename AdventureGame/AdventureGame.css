@@ -15,34 +15,20 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#story-container {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.story-segment {
-    margin-bottom: 40px;
-}
-
-.story-segment h1 {
+#story-title {
     font-size: 2em;
     margin-bottom: 10px;
 }
 
-.story-segment p {
+#story-text {
     font-size: 1.2em;
     margin-bottom: 20px;
 }
 
-.story-segment img {
+#story-image {
     max-width: 100%;
     height: auto;
     margin-bottom: 20px;
-}
-
-#choices-container {
-    text-align: center;
-    margin-top: 20px;
 }
 
 .choice-button {
