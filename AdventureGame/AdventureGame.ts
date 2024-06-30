@@ -46,7 +46,7 @@ const titles = [
 ];
 
 const storyTexts = [
-"You find yourself standing at the edge of an enchanted forest. You've heard tales of great treasures and magical creatures that lie within. Before you are two paths:",
+    "You find yourself standing at the edge of an enchanted forest. You've heard tales of great treasures and magical creatures that lie within. Before you are two paths:",
     "As you walk along the left path, you come across a talking fox. The fox offers to guide you through the forest in exchange for a favor.",
     "As you proceed down the right path, you encounter a group of goblins who seem to be guarding something precious.",
     "The fox guides you to a hidden grove filled with rare herbs and plants.",
@@ -74,346 +74,207 @@ const storyTexts = [
     "You claim the treasure as your own and take it back home with you.\n\nIt brings great wealth and allows you to improve the lives of those in your village.\n\nYou become a celebrated hero.\n\nThe End.",
     "You leave the area as fast as you can.\n\nYou keep moving, not wanting to risk stopping.\n\nYour caution ensures your safety.\n\nYou navigate through the forest and find your way home, your tales of adventure inspiring others.\n\nThe End.",
     "The magical creatures welcome you and offer to share their wisdom.\n\nThe knowledge you gain from the creatures helps you greatly in your journey.\n\nYou return home wiser and become a respected sage.\n\nThe End.",
-    "You watch the creatures, learning from their behavior without disturbing them.\n\nYou take detailed notes on what you observe.\n\nYour notes become valuable research that brings you fame as a scholar.\n\nYou return home and share your discoveries, gaining great respect.\n\nThe End.",
-    "The left fork leads you to a tranquil glade with a crystal-clear pond.\n\nYou explore the glade, looking for any hidden secrets.\n\nYour exploration leads to the discovery of ancient runes that grant you powerful knowledge.\n\nYou return home and use this knowledge to become a respected leader.\n\nThe End.",
-    "The right fork leads you to a dense thicket.\n\nYou push through the thicket, determined to see what lies beyond.\n\nBeyond the thicket, you find a hidden village where you are welcomed and celebrated.\n\nYou share your stories and live a life of peace and prosperity.\n\nThe End."
+    "You watch the creatures, learning from their behavior without disturbing them.\n\nYou take detailed notes on what you observe.\n\nYour notes become valuable research that brings you fame as a scholar.\n\nYou return home to share your discoveries.\n\nThe End.",
+    "The left fork takes you to a hidden meadow filled with rare plants and animals.\n\nYou spend time studying the unique flora and fauna.\n\nYour discoveries contribute greatly to the field of natural sciences.\n\nYou return home as a renowned biologist.\n\nThe End.",
+    "The right fork leads you to a mystical grove where you find a powerful artifact.\n\nThis artifact grants you the ability to understand the language of animals.\n\nYou use this ability to become a great protector of wildlife.\n\nThe End."
 ];
 
-const choiceTexts = [
-    "This path is overgrown with vines and flowers. It's said to be the safer route, but who knows what secrets it holds?",
-    "This path is dark and foreboding. It's known for its dangerous creatures, but also for the treasures that those creatures guard.",
-    "You agree to the fox's terms, curious about the favor it might ask for later.",
-    "You decide to trust your own instincts and continue walking alone.",
-    "You decide to face the goblins head-on and see what they are protecting.",
-    "Sneak Past the Goblins",
-    "You try to sneak past them, hoping to avoid a confrontation.",
-    "You collect some herbs, thinking they might be useful later.",
-    "You ask the fox to take you to the next part of the forest.",
-    "Carefully, you try to cross the bridge.",
-    "You search for a safer route around the chasm.", 
-    "You accept the challenge, confident in your abilities.",
-    "You decide it's safer to fight your way through.",
-    "You follow the path, curious about where it leads.",
-    "You decide to return to the main path to avoid getting lost.",
-    "You thank the fox and ask it to guide you further.",
-    "You decide you've had enough of the fox's help and continue alone.",
-    "You decide to explore the ruin, intrigued by its history.",
-    "You choose to set up camp and rest for a while.",
-    "You decide to explore the cave.",
-    "You choose to continue on the path, which now leads into a thick forest.",
-    "You decide to take the narrow path, despite its difficulty.",
-    "You decide the risk is too great and turn back to find another route.",
-    "You accept the treasure and continue on your way.",
-    "You refuse the treasure, suspecting a trick, and move on.",
-    "You take the treasure in spite of the potential risk.", 
-    "You leave the Treasure behind, aware of the possibility it could be a trap.",
-    "You try to communicate with the creatures.",
-    "You decide to watch them from a distance.",
-    "You choose the left fork, hoping it leads to your destination.",
-    "You choose the right fork, curious about what lies ahead."
-];
-
-const choiceHeadlines = [
-    "Take The Left Path",
-    "Take the Right Path",
-    "Accept the Fox's Offer",
-    "Decline the Fox's Offer",
-    "Confront the Goblins", 
-    "Sneak Past the Goblins", 
-    "Gather Herbs",
-    "Explore Further", 
-    "Cross the Bridge", 
-    "Find Another Way", 
-    "Play the Game",
-    "Fight the Goblins",
-    "Follow the Hidden Path",
-    "Return to the main path",
-    "Thank the Fox", 
-    "Part Ways", 
-    "Explore the Ruin", 
-    "Set Up Camp", 
-    "Enter the Cave",
-    "Keep Walking", 
-    "Take the Narrow Path", 
-    "Turn Back", 
-    "Accept the Treasure", 
-    "Decline the Treasure", 
-    "Claim their Treasure", 
-    "Leave Quickly", 
-    "Approach the Creatures",
-    "Observe from Afar", 
-    "Take the Left Fork", 
-    "Take the Right Fork", 
-];
-
-const images = [
-    "images/1.jpg", "images/2A.jpg", "images/2B.jpg", "images/3A.jpg", "images/3B.jpg", "images/3C.jpg", "images/3D.jpg",
-    "images/4A.jpg", "images/4B.jpg", "images/4C.jpg", "images/4D.jpg", "images/4E.jpg", "images/4F.jpg", "images/4G.jpg",
-    "images/4H.jpg", "images/5A.jpg", "images/5B.jpg", "images/5C.jpg", "images/5D.jpg", "images/5E.jpg", "images/5F.jpg",
-    "images/5G.jpg", "images/5H.jpg", "images/5I.jpg", "images/5J.jpg", "images/5K.jpg", "images/5L.jpg", "images/5M.jpg",
-    "images/5N.jpg", "images/5O.jpg", "images/5P.jpg"
-];
-
-const story: StoryNode[] = [
+const storyNodes: StoryNode[] = [
     {
         title: titles[0],
         text: storyTexts[0],
-        image: images[0],
+        image: "image-01.jpg",
         choices: [
-            { text: choiceTexts[0], headline: choiceHeadlines[0], nextNode: 1 },
-            { text: choiceTexts[1], headline: choiceHeadlines[1], nextNode: 2 }
+            { text: "Take the left path", headline: titles[1], nextNode: 1 },
+            { text: "Take the right path", headline: titles[2], nextNode: 2 }
         ]
     },
     {
         title: titles[1],
         text: storyTexts[1],
-        image: images[1],
+        image: "image-02.jpg",
         choices: [
-            { text: choiceTexts[2], headline: choiceHeadlines[2], nextNode: 3 },
-            { text: choiceTexts[3], headline: choiceHeadlines[3], nextNode: 4 }
+            { text: "Accept the fox's offer", headline: titles[3], nextNode: 3 },
+            { text: "Decline the fox's offer", headline: titles[4], nextNode: 4 }
         ]
     },
     {
         title: titles[2],
         text: storyTexts[2],
-        image: images[2],
+        image: "image-03.jpg",
         choices: [
-            { text: choiceTexts[4], headline: choiceHeadlines[4], nextNode: 5 },
-            { text: choiceTexts[5], headline: choiceHeadlines[5], nextNode: 6 }
+            { text: "Confront the goblins", headline: titles[5], nextNode: 5 },
+            { text: "Sneak past the goblins", headline: titles[6], nextNode: 6 }
         ]
     },
     {
         title: titles[3],
         text: storyTexts[3],
-        image: images[3],
+        image: "image-04.jpg",
         choices: [
-            { text: choiceTexts[6], headline: choiceHeadlines[6], nextNode: 7 },
-            { text: choiceTexts[7], headline: choiceHeadlines[7], nextNode: 8 }
+            { text: "Gather herbs", headline: titles[7], nextNode: 7 },
+            { text: "Explore further", headline: titles[8], nextNode: 8 }
         ]
     },
     {
         title: titles[4],
         text: storyTexts[4],
-        image: images[4],
+        image: "image-05.jpg",
         choices: [
-            { text: choiceTexts[8], headline: choiceHeadlines[8], nextNode: 9 },
-            { text: choiceTexts[9], headline: choiceHeadlines[9], nextNode: 10 }
+            { text: "Cross the bridge", headline: titles[9], nextNode: 9 },
+            { text: "Find another way", headline: titles[10], nextNode: 10 }
         ]
     },
     {
         title: titles[5],
         text: storyTexts[5],
-        image: images[5],
+        image: "image-06.jpg",
         choices: [
-            { text: choiceTexts[10], headline: choiceHeadlines[10], nextNode: 11 },
-            { text: choiceTexts[11], headline: choiceHeadlines[11], nextNode: 12 }
+            { text: "Play the game", headline: titles[11], nextNode: 11 },
+            { text: "Fight the goblins", headline: titles[12], nextNode: 12 }
         ]
     },
     {
         title: titles[6],
         text: storyTexts[6],
-        image: images[6],
+        image: "image-07.jpg",
         choices: [
-            { text: choiceTexts[12], headline: choiceHeadlines[12], nextNode: 13 },
-            { text: choiceTexts[13], headline: choiceHeadlines[13], nextNode: 14 }
+            { text: "Follow the hidden path", headline: titles[13], nextNode: 13 },
+            { text: "Return to the main path", headline: titles[14], nextNode: 14 }
         ]
     },
     {
         title: titles[7],
         text: storyTexts[7],
-        image: images[7],
+        image: "image-08.jpg",
         choices: [
-            { text: choiceTexts[14], headline: choiceHeadlines[14], nextNode: 15 },
-            { text: choiceTexts[15], headline: choiceHeadlines[15], nextNode: 16 }
+            { text: "Thank the fox", headline: titles[15], nextNode: 15 },
+            { text: "Part ways", headline: titles[16], nextNode: 16 }
         ]
     },
     {
         title: titles[8],
         text: storyTexts[8],
-        image: images[8],
+        image: "image-09.jpg",
         choices: [
-            { text: choiceTexts[16], headline: choiceHeadlines[16], nextNode: 17 },
-            { text: choiceTexts[17], headline: choiceHeadlines[17], nextNode: 18 }
+            { text: "Explore the ruin", headline: titles[17], nextNode: 17 },
+            { text: "Set up camp", headline: titles[18], nextNode: 18 }
         ]
     },
     {
         title: titles[9],
         text: storyTexts[9],
-        image: images[9],
+        image: "image-10.jpg",
         choices: [
-            { text: choiceTexts[18], headline: choiceHeadlines[18], nextNode: 19 },
-            { text: choiceTexts[19], headline: choiceHeadlines[19], nextNode: 20 }
+            { text: "Enter the cave", headline: titles[19], nextNode: 19 },
+            { text: "Keep walking", headline: titles[20], nextNode: 20 }
         ]
     },
     {
         title: titles[10],
         text: storyTexts[10],
-        image: images[10],
+        image: "image-11.jpg",
         choices: [
-            { text: choiceTexts[20], headline: choiceHeadlines[20], nextNode: 21 },
-            { text: choiceTexts[21], headline: choiceHeadlines[21], nextNode: 22 }
+            { text: "Take the narrow path", headline: titles[21], nextNode: 21 },
+            { text: "Turn back", headline: titles[22], nextNode: 22 }
         ]
     },
     {
         title: titles[11],
         text: storyTexts[11],
-        image: images[11],
+        image: "image-12.jpg",
         choices: [
-            { text: choiceTexts[22], headline: choiceHeadlines[22], nextNode: 23 },
-            { text: choiceTexts[23], headline: choiceHeadlines[23], nextNode: 24 }
+            { text: "Accept the treasure", headline: titles[23], nextNode: 23 },
+            { text: "Decline the treasure", headline: titles[24], nextNode: 24 }
         ]
     },
     {
         title: titles[12],
         text: storyTexts[12],
-        image: images[12],
+        image: "image-13.jpg",
         choices: [
-            { text: choiceTexts[24], headline: choiceHeadlines[24], nextNode: 25 },
-            { text: choiceTexts[25], headline: choiceHeadlines[25], nextNode: 26 }
+            { text: "Claim their treasure", headline: titles[25], nextNode: 25 },
+            { text: "Leave quickly", headline: titles[26], nextNode: 26 }
         ]
     },
     {
         title: titles[13],
         text: storyTexts[13],
-        image: images[13],
+        image: "image-14.jpg",
         choices: [
-            { text: choiceTexts[26], headline: choiceHeadlines[26], nextNode: 27 },
-            { text: choiceTexts[27], headline: choiceHeadlines[27], nextNode: 28 }
+            { text: "Approach the creatures", headline: titles[27], nextNode: 27 },
+            { text: "Observe from afar", headline: titles[28], nextNode: 28 }
         ]
     },
     {
         title: titles[14],
         text: storyTexts[14],
-        image: images[14],
+        image: "image-15.jpg",
         choices: [
-            { text: choiceTexts[28], headline: choiceHeadlines[28], nextNode: 29 },
-            { text: choiceTexts[29], headline: choiceHeadlines[29], nextNode: 30 }
+            { text: "Take the left fork", headline: titles[29], nextNode: 29 },
+            { text: "Take the right fork", headline: titles[30], nextNode: 30 }
         ]
-    },
-    {
-        title: titles[15],
-        text: storyTexts[15],
-        image: images[15],
-        choices: []
-    },
-    {
-        title: titles[16],
-        text: storyTexts[16],
-        image: images[16],
-        choices: []
-    },
-    {
-        title: titles[17],
-        text: storyTexts[17],
-        image: images[17],
-        choices: []
-    },
-    {
-        title: titles[18],
-        text: storyTexts[18],
-        image: images[18],
-        choices: []
-    },
-    {
-        title: titles[19],
-        text: storyTexts[19],
-        image: images[19],
-        choices: []
-    },
-    {
-        title: titles[20],
-        text: storyTexts[20],
-        image: images[20],
-        choices: []
-    },
-    {
-        title: titles[21],
-        text: storyTexts[21],
-        image: images[21],
-        choices: []
-    },
-    {
-        title: titles[22],
-        text: storyTexts[22],
-        image: images[22],
-        choices: []
-    },
-    {
-        title: titles[23],
-        text: storyTexts[23],
-        image: images[23],
-        choices: []
-    },
-    {
-        title: titles[24],
-        text: storyTexts[24],
-        image: images[24],
-        choices: []
-    },
-    {
-        title: titles[25],
-        text: storyTexts[25],
-        image: images[25],
-        choices: []
-    },
-    {
-        title: titles[26],
-        text: storyTexts[26],
-        image: images[26],
-        choices: []
-    },
-    {
-        title: titles[27],
-        text: storyTexts[27],
-        image: images[27],
-        choices: []
-    },
-    {
-        title: titles[28],
-        text: storyTexts[28],
-        image: images[28],
-        choices: []
-    },
-    {
-        title: titles[29],
-        text: storyTexts[29],
-        image: images[29],
-        choices: []
-    },
-    {
-        title: titles[30],
-        text: storyTexts[30],
-        image: images[30],
-        choices: []
     }
 ];
 
-function makeChoice(choiceIndex: number) {
-    const currentNode = story[currentNodeIndex];
-    const nextNodeIndex = currentNode.choices[choiceIndex].nextNode;
-    loadNode(nextNodeIndex);
-}
+function startGame() {
+    const storyContainer = document.getElementById("story-container");
+    const choice1Button = document.getElementById("choice1") as HTMLButtonElement;
+    const choice2Button = document.getElementById("choice2") as HTMLButtonElement;
 
-function loadNode(nodeIndex: number) {
-    const node = story[nodeIndex];
-    currentNodeIndex = nodeIndex;
+    function displayNode(node: StoryNode) {
+        if (storyContainer) { // Check if storyContainer is not null
+            const storySegment = document.createElement("div");
+            storySegment.className = "story-segment";
 
-    (document.getElementById("story-title") as HTMLElement).innerText = node.title;
-    (document.getElementById("story-text") as HTMLElement).innerHTML = `<strong>Story:</strong> ${node.text}`;
-    (document.getElementById("story-image") as HTMLImageElement).src = node.image;
+            const titleElement = document.createElement("h1");
+            titleElement.textContent = node.title;
 
-    node.choices.forEach((choice, index) => {
-        const button = document.getElementById(`choice${index + 1}`) as HTMLButtonElement;
-        button.innerHTML = `<strong>${choice.headline}:</strong> ${choice.text}`;
-        button.style.display = "inline-block";
-        button.onclick = () => makeChoice(index);
-    });
+            const textElement = document.createElement("p");
+            textElement.textContent = node.text;
 
-    for (let i = node.choices.length; i < 2; i++) {
-        const button = document.getElementById(`choice${i + 1}`) as HTMLButtonElement;
-        button.style.display = "none";
+            const imageElement = document.createElement("img");
+            imageElement.src = node.image;
+
+            storySegment.appendChild(titleElement);
+            storySegment.appendChild(textElement);
+            storySegment.appendChild(imageElement);
+            storyContainer.appendChild(storySegment);
+
+            // Scroll to the bottom of the storyContainer
+            storyContainer.scrollTop = storyContainer.scrollHeight;
+        }
     }
+
+    function handleChoice(choice: Choice) {
+        const nextNode = storyNodes[choice.nextNode];
+        displayNode(nextNode);
+        updateChoices(nextNode);
+    }
+
+    function updateChoices(node: StoryNode) {
+        if (node.choices.length > 0) {
+            choice1Button.style.display = "inline-block";
+            choice2Button.style.display = "inline-block";
+            choice1Button.textContent = node.choices[0].text;
+            choice1Button.onclick = () => handleChoice(node.choices[0]);
+
+            if (node.choices[1]) {
+                choice2Button.textContent = node.choices[1].text;
+                choice2Button.onclick = () => handleChoice(node.choices[1]);
+            } else {
+                choice2Button.style.display = "none";
+            }
+        } else {
+            choice1Button.style.display = "none";
+            choice2Button.style.display = "none";
+        }
+    }
+
+    // Start with the first node
+    const firstNode = storyNodes[0];
+    displayNode(firstNode);
+    updateChoices(firstNode);
 }
 
-let currentNodeIndex = 0;
-window.onload = () => loadNode(0);
+document.addEventListener("DOMContentLoaded", startGame);
