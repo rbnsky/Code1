@@ -61,18 +61,14 @@ const stars: Star[] = [];
 function generateBuildings(count: number) {
     for (let i = 0; i < count; i++) {
         const depth = Math.random();
-        const avgHeight = height * 0.5;
-        let buildingHeight = avgHeight * (0.5 + depth * 1.5);
-        if (Math.random() < 0.05) {  // 5% chance for especially tall buildings
-            buildingHeight *= 1.5;
-        }
+        const buildingHeight = cityHeight * (0.2 + depth * 0.8);
         const brightness = 20 + depth * 100;
 
         buildings.push({
             x: Math.random() * width,
             y: height - buildingHeight,
             width: 10 + (1 - depth) * 60 + Math.random() * 20,
-            height: buildingHeight,
+            height: buildingHeight + (depth > 0.9 ? Math.random() * height * 0.3 : 0),
             brightness,
             depth
         });
@@ -146,8 +142,8 @@ function drawSky() {
 }
 
 function drawMoon() {
-    const moonRadius = 120;
-    const moonY = height * 0.45;
+    const moonRadius = 160;
+    const moonY = height * 0.4;
     ctx.fillStyle = '#ffffff';
     ctx.beginPath();
     ctx.arc(width / 2, moonY, moonRadius, 0, Math.PI * 2);

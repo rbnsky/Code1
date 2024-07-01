@@ -1,86 +1,33 @@
-interface Building {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
-    brightness: number;
-    depth: number;
-}
-
-interface Car {
-    x: number;
-    y: number;
-    speed: number;
-    isWhite: boolean;
-    depth: number;
-}
-
-interface Light {
-    x: number;
-    y: number;
-    size: number;
-    color: string;
-    blink: boolean;
-    blinkState: boolean;
-    blinkTimer: number;
-    isRed: boolean;
-}
-
-interface Cloud {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
-    speed: number;
-    depth: number;
-}
-
-interface Star {
-    x: number;
-    y: number;
-    size: number;
-    warmth: number;
-}
-
-const canvas = document.getElementById('sciFiCanvas') as HTMLCanvasElement;
-const ctx = canvas.getContext('2d')!;
-
+"use strict";
+const canvas = document.getElementById('sciFiCanvas');
+const ctx = canvas.getContext('2d');
 const width = 2560;
 const height = 1440;
 canvas.width = width;
 canvas.height = height;
-
 const cityHeight = height * 4 / 5;
-
-const buildings: Building[] = [];
-const cars: Car[] = [];
-const lights: Light[] = [];
-const clouds: Cloud[] = [];
-const stars: Star[] = [];
-
-function generateBuildings(count: number) {
+const buildings = [];
+const cars = [];
+const lights = [];
+const clouds = [];
+const stars = [];
+function generateBuildings(count) {
     for (let i = 0; i < count; i++) {
         const depth = Math.random();
-        const avgHeight = height * 0.5;
-        let buildingHeight = avgHeight * (0.5 + depth * 1.5);
-        if (Math.random() < 0.05) {  // 5% chance for especially tall buildings
-            buildingHeight *= 1.5;
-        }
+        const buildingHeight = cityHeight * (0.2 + depth * 0.8);
         const brightness = 20 + depth * 100;
-
         buildings.push({
             x: Math.random() * width,
             y: height - buildingHeight,
             width: 10 + (1 - depth) * 60 + Math.random() * 20,
-            height: buildingHeight,
+            height: buildingHeight + (depth > 0.9 ? Math.random() * height * 0.3 : 0),
             brightness,
             depth
         });
     }
     buildings.sort((a, b) => b.depth - a.depth);
 }
-
-function generateCars(count: number) {
+function generateCars(count) {
     for (let i = 0; i < count; i++) {
         const depth = Math.random();
         const maxY = height * 0.75;
@@ -94,8 +41,7 @@ function generateCars(count: number) {
         });
     }
 }
-
-function generateLights(count: number) {
+function generateLights(count) {
     for (let i = 0; i < count; i++) {
         const isRed = Math.random() < 0.2;
         lights.push({
@@ -110,8 +56,7 @@ function generateLights(count: number) {
         });
     }
 }
-
-function generateClouds(count: number) {
+function generateClouds(count) {
     for (let i = 0; i < count; i++) {
         const isLow = Math.random() < 0.4;
         const depth = isLow ? Math.random() : 1;
@@ -125,8 +70,7 @@ function generateClouds(count: number) {
         });
     }
 }
-
-function generateStars(count: number) {
+function generateStars(count) {
     for (let i = 0; i < count; i++) {
         stars.push({
             x: Math.random() * width,
@@ -136,7 +80,6 @@ function generateStars(count: number) {
         });
     }
 }
-
 function drawSky() {
     const gradient = ctx.createRadialGradient(width / 2, 0, 0, width / 2, 0, height);
     gradient.addColorStop(0, '#4a6e8a');
@@ -144,35 +87,28 @@ function drawSky() {
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, width, height);
 }
-
 function drawMoon() {
-    const moonRadius = 120;
-    const moonY = height * 0.45;
+    const moonRadius = 160;
+    const moonY = height * 0.4;
     ctx.fillStyle = '#ffffff';
     ctx.beginPath();
     ctx.arc(width / 2, moonY, moonRadius, 0, Math.PI * 2);
     ctx.fill();
 }
-
 function drawBuildings() {
     buildings.forEach(building => {
         ctx.fillStyle = `rgb(${building.brightness}, ${building.brightness}, ${building.brightness})`;
         ctx.fillRect(building.x, building.y, building.width, building.height);
-        
         ctx.strokeStyle = `rgb(${Math.min(255, building.brightness + 20)}, ${Math.min(255, building.brightness + 20)}, ${Math.min(255, building.brightness + 20)})`;
         ctx.lineWidth = 1;
         ctx.strokeRect(building.x, building.y, building.width, building.height);
     });
 }
-
 function drawCars() {
     cars.forEach(car => {
-        const isVisible = buildings.every(building => 
-            car.depth >= building.depth ||
-            car.x < building.x || car.x > building.x + building.width || 
-            car.y < building.y
-        );
-
+        const isVisible = buildings.every(building => car.depth >= building.depth ||
+            car.x < building.x || car.x > building.x + building.width ||
+            car.y < building.y);
         if (isVisible) {
             const color = car.isWhite ? 'rgba(255, 250, 240, 0.8)' : 'rgba(255, 0, 0, 0.8)';
             ctx.fillStyle = color;
@@ -183,13 +119,13 @@ function drawCars() {
             ctx.fill();
             ctx.shadowBlur = 0;
         }
-
         car.x += car.speed;
-        if (car.x > width) car.x = 0;
-        if (car.x < 0) car.x = width;
+        if (car.x > width)
+            car.x = 0;
+        if (car.x < 0)
+            car.x = width;
     });
 }
-
 function drawLights() {
     lights.forEach(light => {
         if (light.blink) {
@@ -212,7 +148,6 @@ function drawLights() {
         }
     });
 }
-
 function drawClouds() {
     ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
     clouds.sort((a, b) => b.depth - a.depth).forEach(cloud => {
@@ -220,10 +155,10 @@ function drawClouds() {
         ctx.ellipse(cloud.x, cloud.y, cloud.width / 2, cloud.height / 2, 0, 0, Math.PI * 2);
         ctx.fill();
         cloud.x += cloud.speed;
-        if (cloud.x - cloud.width / 2 > width) cloud.x = -cloud.width / 2;
+        if (cloud.x - cloud.width / 2 > width)
+            cloud.x = -cloud.width / 2;
     });
 }
-
 function drawStars() {
     stars.forEach(star => {
         const gradient = ctx.createRadialGradient(star.x, star.y, 0, star.x, star.y, star.size * 2);
@@ -235,10 +170,8 @@ function drawStars() {
         ctx.fill();
     });
 }
-
 function animate() {
     ctx.clearRect(0, 0, width, height);
-    
     drawSky();
     drawStars();
     drawMoon();
@@ -246,13 +179,12 @@ function animate() {
     drawBuildings();
     drawLights();
     drawCars();
-    
     requestAnimationFrame(animate);
 }
-
 generateBuildings(700);
 generateCars(500);
 generateLights(1000);
 generateClouds(50);
 generateStars(200);
 animate();
+//# sourceMappingURL=main.js.map
