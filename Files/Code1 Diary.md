@@ -346,12 +346,30 @@ We continued working on our Connect 4 Game.
 
 ## Canvas
 
-Today we created a [canvas](https://rbnsky.github.io/Code1/Canvas/Canvas.html) using Typescript.
+Today we created a [canvas](https://rbnsky.github.io/Code1/Websites/Canvas/Canvas.html) using Typescript.
 
+#
 
+*01.07.2024*
 
+*DAY NINE*
 
+## Create a Cityscape on a Canvas
 
+Today I created a Sci-fi Cityscape on a Canvas using Typescript.
+
+I made multiple Iterations:
+- [Version 1](https://rbnsky.github.io/Code1/Websites/Cityscapes/CityscapeV1/index.html)
+- [Version 2](https://rbnsky.github.io/Code1/Websites/Cityscapes/CityscapeV2/index.html)
+- [Version 3](https://rbnsky.github.io/Code1/Websites/Cityscapes/CityscapeV3/index.html)
+- [Version 4](https://rbnsky.github.io/Code1/Websites/Cityscapes/CityscapeV4/index.html)
+- [Version 5](https://rbnsky.github.io/Code1/Websites/Cityscapes/CityscapeV5/index.html)
+
+#
+
+*02.07.2024*
+
+*DAY TEN*
 
 
 
