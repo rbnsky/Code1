@@ -4,6 +4,7 @@ interface Building {
     width: number;
     height: number;
     brightness: number;
+    row: number;
 }
 
 interface Car {
@@ -11,12 +12,14 @@ interface Car {
     y: number;
     speed: number;
     isWarm: boolean;
+    row: number;
 }
 
 interface Cloud {
     x: number;
     y: number;
-    elements: { width: number; height: number; offset: number }[];
+    width: number;
+    height: number;
     speed: number;
 }
 
@@ -33,9 +36,10 @@ const ctx = canvas.getContext('2d')!;
 const width = canvas.width;
 const height = canvas.height;
 
-const cityHeight = height * 2 / 5;
+const cityHeight = height * 3 / 5;
 const mountainRows = 3;
-const mountainHeight = height * 0.3;
+const mountainHeight = height * 0.2;
+const buildingRows = 5;
 
 const buildings: Building[] = [];
 const cars: Car[] = [];
@@ -43,50 +47,53 @@ const clouds: Cloud[] = [];
 const stars: Star[] = [];
 
 function generateBuildings(count: number) {
-    for (let i = 0; i < count; i++) {
-        const y = height - Math.random() * cityHeight;
-        const distanceFromBottom = height - y;
-        const buildingHeight = distanceFromBottom * (0.5 + Math.random() * 0.5);
-        const brightness = Math.floor((distanceFromBottom / cityHeight) * 150) + 20;
+    for (let row = 0; row < buildingRows; row++) {
+        const rowHeight = cityHeight / buildingRows;
+        const baseY = height - cityHeight + row * rowHeight;
+        const rowCount = Math.floor(count / buildingRows);
+        
+        for (let i = 0; i < rowCount; i++) {
+            const buildingHeight = rowHeight * (0.5 + Math.random() * 1.5);
+            const brightness = 20 + (row / buildingRows) * 100;
 
-        buildings.push({
-            x: Math.random() * width,
-            y: height - buildingHeight,
-            width: Math.random() * 30 + 20,
-            height: buildingHeight,
-            brightness
-        });
+            buildings.push({
+                x: (i / rowCount) * width + Math.random() * (width / rowCount - 30),
+                y: baseY - buildingHeight,
+                width: Math.random() * 20 + 10,
+                height: buildingHeight,
+                brightness,
+                row
+            });
+        }
     }
-    buildings.sort((a, b) => b.height - a.height);
+    buildings.sort((a, b) => b.row - a.row || b.height - a.height);
 }
 
 function generateCars(count: number) {
-    for (let i = 0; i < count; i++) {
-        cars.push({
-            x: Math.random() * width,
-            y: height - cityHeight + Math.random() * (cityHeight - 50),
-            speed: (Math.random() * 2 + 0.5) * (Math.random() < 0.5 ? 1 : -1),
-            isWarm: Math.random() < 0.7
-        });
+    for (let row = 0; row < buildingRows - 1; row++) {
+        const rowHeight = cityHeight / buildingRows;
+        const baseY = height - cityHeight + (row + 0.5) * rowHeight;
+        const rowCount = Math.floor(count / (buildingRows - 1));
+        
+        for (let i = 0; i < rowCount; i++) {
+            cars.push({
+                x: Math.random() * width,
+                y: baseY,
+                speed: (Math.random() * 2 + 0.5) * (Math.random() < 0.5 ? 1 : -1),
+                isWarm: Math.random() < 0.7,
+                row
+            });
+        }
     }
 }
 
 function generateClouds(count: number) {
     for (let i = 0; i < count; i++) {
-        const elements = [];
-        const cloudWidth = Math.random() * 300 + 100;
-        const cloudHeight = Math.random() * 50 + 20;
-        for (let j = 0; j < 5; j++) {
-            elements.push({
-                width: cloudWidth * (0.3 + Math.random() * 0.7),
-                height: cloudHeight * (0.5 + Math.random() * 0.5),
-                offset: Math.random() * cloudWidth
-            });
-        }
         clouds.push({
             x: Math.random() * width,
             y: height - cityHeight - mountainHeight - Math.random() * 100,
-            elements,
+            width: Math.random() * 300 + 100,
+            height: Math.random() * 50 + 20,
             speed: Math.random() * 0.5 + 0.1
         });
     }
@@ -114,21 +121,21 @@ function drawSky() {
 function drawMoon() {
     ctx.fillStyle = '#ffffff';
     ctx.beginPath();
-    ctx.arc(width / 2, height - cityHeight - mountainHeight - 100, 80, 0, Math.PI * 2);
+    ctx.arc(width / 2, height / 2, 80, 0, Math.PI * 2);
     ctx.fill();
 }
 
 function drawMountains() {
     for (let row = 0; row < mountainRows; row++) {
-        const brightness = 100 + row * 50;
-        const blue = 100 + row * 50;
+        const brightness = 50 + row * 30;
+        const blue = 70 + row * 30;
         ctx.fillStyle = `rgb(${brightness}, ${brightness}, ${blue})`;
         ctx.beginPath();
-        ctx.moveTo(0, height - cityHeight - (row + 1) * (mountainHeight / mountainRows));
+        ctx.moveTo(0, height - cityHeight / 2 - (row + 1) * (mountainHeight / mountainRows));
         
-        for (let x = 0; x <= width; x += 50) {
-            const y = height - cityHeight - (row + 1) * (mountainHeight / mountainRows) +
-                      Math.pow(Math.sin(x * 0.001) * 100, 3) * 0.00001 + Math.random() * 10;
+        for (let x = 0; x <= width; x += 20) {
+            const y = height - cityHeight / 2 - (row + 1) * (mountainHeight / mountainRows) +
+                      Math.sin(x * 0.01) * 20 + Math.random() * 5;
             ctx.lineTo(x, y);
         }
         
@@ -153,14 +160,15 @@ function drawBuildings() {
 function drawCars() {
     cars.forEach(car => {
         const isVisible = buildings.every(building => 
+            car.row >= building.row ||
             car.x < building.x || car.x > building.x + building.width || 
             car.y < building.y
         );
 
         if (isVisible) {
             if (car.isWarm) {
-                ctx.fillStyle = 'rgba(255, 200, 0, 0.7)';
-                ctx.shadowColor = 'rgba(255, 200, 0, 0.5)';
+                ctx.fillStyle = 'rgba(255, 240, 200, 0.7)';
+                ctx.shadowColor = 'rgba(255, 240, 200, 0.5)';
             } else {
                 ctx.fillStyle = 'rgba(255, 0, 0, 0.7)';
                 ctx.shadowColor = 'rgba(255, 0, 0, 0.5)';
@@ -181,13 +189,11 @@ function drawCars() {
 function drawClouds() {
     ctx.fillStyle = '#ffffff';
     clouds.forEach(cloud => {
-        cloud.elements.forEach(element => {
-            ctx.beginPath();
-            ctx.ellipse(cloud.x + element.offset, cloud.y, element.width / 2, element.height / 2, 0, 0, Math.PI * 2);
-            ctx.fill();
-        });
+        ctx.beginPath();
+        ctx.ellipse(cloud.x, cloud.y, cloud.width / 2, cloud.height / 2, 0, 0, Math.PI * 2);
+        ctx.fill();
         cloud.x += cloud.speed;
-        if (cloud.x - cloud.elements[0].width / 2 > width) cloud.x = -cloud.elements[0].width / 2;
+        if (cloud.x - cloud.width / 2 > width) cloud.x = -cloud.width / 2;
     });
 }
 
@@ -217,8 +223,8 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-generateBuildings(200);
-generateCars(100);
+generateBuildings(500);
+generateCars(200);
 generateClouds(10);
 generateStars(200);
 animate();
