@@ -1,16 +1,4 @@
-interface Choice {
-    text: string;
-    headline: string;
-    nextNode: number;
-}
-
-interface StoryNode {
-    title: string;
-    text: string;
-    image: string;
-    choices: Choice[];
-}
-
+// Arrays of story data
 const titles = [
     "The Forest",
     "The Fox's Offer",
@@ -73,168 +61,75 @@ const images = [
     "images/5N.jpg", "images/5O.jpg", "images/5P.jpg"
 ];
 
-const storyNodes: StoryNode[] = [
-    {
-        title: titles[0],
-        text: storyTexts[0],
-        image: images[0],
-        choices: [
-            { text: optionHeadlines[0][0], headline: optionHeadlines[0][0], nextNode: 1 },
-            { text: optionHeadlines[0][1], headline: optionHeadlines[0][1], nextNode: 2 }
-        ]
-    },
-    {
-        title: titles[1],
-        text: storyTexts[1],
-        image: images[1],
-        choices: [
-            { text: optionHeadlines[1][0], headline: optionHeadlines[1][0], nextNode: 3 },
-            { text: optionHeadlines[1][1], headline: optionHeadlines[1][1], nextNode: 4 }
-        ]
-    },
-    {
-        title: titles[2],
-        text: storyTexts[2],
-        image: images[2],
-        choices: [
-            { text: optionHeadlines[2][0], headline: optionHeadlines[2][0], nextNode: 5 },
-            { text: optionHeadlines[2][1], headline: optionHeadlines[2][1], nextNode: 6 }
-        ]
-    },
-    {
-        title: titles[3],
-        text: storyTexts[3],
-        image: images[3],
-        choices: [
-            { text: optionHeadlines[3][0], headline: optionHeadlines[3][0], nextNode: 7 },
-            { text: optionHeadlines[3][1], headline: optionHeadlines[3][1], nextNode: 8 }
-        ]
-    },
-    {
-        title: titles[4],
-        text: storyTexts[4],
-        image: images[4],
-        choices: [
-            { text: optionHeadlines[4][0], headline: optionHeadlines[4][0], nextNode: 9 },
-            { text: optionHeadlines[4][1], headline: optionHeadlines[4][1], nextNode: 10 }
-        ]
-    },
-    {
-        title: titles[5],
-        text: storyTexts[5],
-        image: images[5],
-        choices: [
-            { text: optionHeadlines[5][0], headline: optionHeadlines[5][0], nextNode: 11 },
-            { text: optionHeadlines[5][1], headline: optionHeadlines[5][1], nextNode: 12 }
-        ]
-    },
-    {
-        title: titles[6],
-        text: storyTexts[6],
-        image: images[6],
-        choices: [
-            { text: optionHeadlines[6][0], headline: optionHeadlines[6][0], nextNode: 13 },
-            { text: optionHeadlines[6][1], headline: optionHeadlines[6][1], nextNode: 14 }
-        ]
-    },
-    {
-        title: titles[7],
-        text: storyTexts[7],
-        image: images[7],
-        choices: [
-            { text: optionHeadlines[7][0], headline: optionHeadlines[7][0], nextNode: 15 },
-            { text: optionHeadlines[7][1], headline: optionHeadlines[7][1], nextNode: 16 }
-        ]
-    },
-    {
-        title: titles[8],
-        text: storyTexts[8],
-        image: images[8],
-        choices: [
-            { text: optionHeadlines[8][0], headline: optionHeadlines[8][0], nextNode: 17 },
-            { text: optionHeadlines[8][1], headline: optionHeadlines[8][1], nextNode: 18 }
-        ]
-    },
-    {
-        title: titles[9],
-        text: storyTexts[9],
-        image: images[9],
-        choices: [
-            { text: optionHeadlines[9][0], headline: optionHeadlines[9][0], nextNode: 19 },
-            { text: optionHeadlines[9][1], headline: optionHeadlines[9][1], nextNode: 20 }
-        ]
-    },
-    {
-        title: titles[10],
-        text: storyTexts[10],
-        image: images[10],
-        choices: [
-            { text: optionHeadlines[10][0], headline: optionHeadlines[10][0], nextNode: 21 },
-            { text: optionHeadlines[10][1], headline: optionHeadlines[10][1], nextNode: 22 }
-        ]
-    },
-    {
-        title: titles[11],
-        text: storyTexts[11],
-        image: images[11],
-        choices: [
-            { text: optionHeadlines[11][0], headline: optionHeadlines[11][0], nextNode: 23 },
-            { text: optionHeadlines[11][1], headline: optionHeadlines[11][1], nextNode: 24 }
-        ]
-    },
-    {
-        title: titles[12],
-        text: storyTexts[12],
-        image: images[12],
-        choices: [
-            { text: optionHeadlines[12][0], headline: optionHeadlines[12][0], nextNode: 25 },
-            { text: optionHeadlines[12][1], headline: optionHeadlines[12][1], nextNode: 26 }
-        ]
-    },
-    {
-        title: titles[13],
-        text: storyTexts[13],
-        image: images[13],
-        choices: [
-            { text: optionHeadlines[13][0], headline: optionHeadlines[13][0], nextNode: 27 },
-            { text: optionHeadlines[13][1], headline: optionHeadlines[13][1], nextNode: 28 }
-        ]
-    },
-    {
-        title: titles[14],
-        text: storyTexts[14],
-        image: images[14],
-        choices: [
-            { text: optionHeadlines[14][0], headline: optionHeadlines[14][0], nextNode: 0 },
-            { text: optionHeadlines[14][1], headline: optionHeadlines[14][1], nextNode: 0 }
-        ]
-    }
-];
-
-function displayNode(nodeIndex: number): void {
-    const node = storyNodes[nodeIndex];
-    const storyContainer = document.getElementById('story-container');
-    
-    const nodeElement = document.createElement('div');
-    nodeElement.innerHTML = `
-        <h2>${node.title}</h2>
-        <p>${node.text}</p>
-        <img src="${node.image}" alt="${node.title}" style="width:100%; height:auto;">
-    `;
-    
-    node.choices.forEach(choice => {
-        const button = document.createElement('button');
-        button.innerText = choice.text;
-        button.addEventListener('click', () => {
-            displayNode(choice.nextNode);
-            nodeElement.scrollIntoView({ behavior: 'smooth' });
-        });
-        nodeElement.appendChild(button);
-    });
-
-    storyContainer?.appendChild(nodeElement);
+// Interfaces for TypeScript
+interface Choice {
+    text: string;
+    headline: string;
+    nextNode: number;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    displayNode(0);
-});
+interface StoryNode {
+    title: string;
+    text: string;
+    image: string;
+    choices: Choice[];
+}
+
+// Create story nodes based on the arrays
+const storyNodes: StoryNode[] = titles.map((title, index) => ({
+    title: title,
+    text: storyTexts[index],
+    image: images[index],
+    choices: [
+        { text: optionHeadlines[index][0], headline: optionHeadlines[index][0], nextNode: index * 2 + 1 },
+        { text: optionHeadlines[index][1], headline: optionHeadlines[index][1], nextNode: index * 2 + 2 }
+    ]
+}));
+
+// Function to update the game content based on the current node index
+function updateGameContent(currentNodeIndex: number) {
+    const currentStoryNode = storyNodes[currentNodeIndex];
+
+    // Update story title, text, and image
+    const storyTitleElement = document.getElementById('story-title');
+    const storyTextElement = document.getElementById('story-text');
+    const storyImageElement = document.getElementById('story-image');
+
+    if (storyTitleElement && storyTextElement && storyImageElement) {
+        storyTitleElement.textContent = currentStoryNode.title;
+        storyTextElement.textContent = currentStoryNode.text;
+        storyImageElement.setAttribute('src', currentStoryNode.image);
+    }
+
+    // Update choices
+    const choice1Button = document.getElementById('choice1');
+    const choice2Button = document.getElementById('choice2');
+
+    if (choice1Button && choice2Button) {
+        choice1Button.textContent = currentStoryNode.choices[0].text;
+        choice2Button.textContent = currentStoryNode.choices[1].text;
+
+        // Add event listeners to the choices
+        choice1Button.addEventListener('click', () => {
+            updateGameContent(currentStoryNode.choices[0].nextNode - 1);
+        });
+
+        choice2Button.addEventListener('click', () => {
+            updateGameContent(currentStoryNode.choices[1].nextNode - 1);
+        });
+
+        // Scroll to bottom after updating content
+        scrollToBottom();
+    }
+}
+
+// Function to scroll to the bottom of the game container
+function scrollToBottom() {
+    const gameContainer = document.getElementById('game-container');
+    if (gameContainer) {
+        gameContainer.scrollTop = gameContainer.scrollHeight;
+    }
+}
+
+// Initialize the game by displaying the first story node
+updateGameContent(0);
