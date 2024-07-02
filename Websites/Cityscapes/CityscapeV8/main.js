@@ -39,8 +39,7 @@ function generateCars(count) {
             x: Math.random() * width,
             y,
             speed: (1 - depth) * 3 + 1,
-            colorHue: Math.random() * 360,
-            colorSpeed: Math.random() * 0.5 + 0.1,
+            isWhite: Math.random() < 0.5,
             depth,
             type: 'car'
         });
@@ -54,8 +53,7 @@ function generateLights(count) {
             x: Math.random() * width,
             y: height / 2 + Math.random() * height / 2,
             size: Math.random() * 1.5 + 0.5,
-            colorHue: isRed ? 0 : Math.random() * 60 + 30,
-            colorSpeed: Math.random() * 0.3 + 0.1,
+            color: isRed ? 'hsl(0, 100%, 50%)' : `hsl(40, 100%, ${90 + Math.random() * 10}%)`,
             blink: Math.random() < 0.2,
             blinkState: true,
             blinkTimer: Math.random() * 200,
@@ -96,15 +94,13 @@ function generateSearchLights(count) {
         const initialDirection = Math.random() < 0.5 ? 1 : -1;
         const depth = Math.random();
         searchLights.push({
-            x: Math.random() * (width * 1.5) - width * 0.25,
+            x: Math.random() * (width * 1.5) - width * 0.25, // Wider range for initial x position
             angle: (Math.random() * Math.PI / 6 - Math.PI / 12) * initialDirection,
             speed: (Math.random() * 0.0008 + 0.0002) * initialDirection,
             width: Math.random() * 60 + 30,
             height: Math.random() * height * 0.7 + height * 0.4,
             depth,
             moveSpeed: (1 - depth) * 1 + 0.2,
-            colorHue: Math.random() * 360,
-            colorSpeed: Math.random() * 0.2 + 0.05,
             type: 'searchLight'
         });
     }
@@ -140,9 +136,9 @@ function drawText() {
     ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
     ctx.font = 'bold 24px Arial';
     ctx.textAlign = 'right';
-    ctx.fillText('NEO TOKYO 2084', width - 20, height - 50);
+    ctx.fillText('', width - 20, height - 50);
     ctx.font = '18px Arial';
-    ctx.fillText('SECTOR 7G', width - 20, height - 20);
+    ctx.fillText('', width - 20, height - 20);
 }
 function animate() {
     ctx.clearRect(0, 0, width, height);
@@ -164,8 +160,7 @@ function animate() {
                     element.x = width;
                 break;
             case 'car':
-                element.colorHue = (element.colorHue + element.colorSpeed) % 360;
-                const color = `hsla(${element.colorHue}, 100%, 50%, 0.8)`;
+                const color = element.isWhite ? 'rgba(255, 250, 240, 0.8)' : 'rgba(255, 0, 0, 0.8)';
                 ctx.fillStyle = color;
                 ctx.shadowColor = color;
                 ctx.shadowBlur = 10;
@@ -178,7 +173,6 @@ function animate() {
                     element.x = width;
                 break;
             case 'light':
-                element.colorHue = (element.colorHue + element.colorSpeed) % 360;
                 if (element.blink) {
                     element.blinkTimer--;
                     if (element.blinkTimer <= 0) {
@@ -187,9 +181,8 @@ function animate() {
                     }
                 }
                 if (!element.blink || element.blinkState) {
-                    const lightColor = element.isRed ? `hsl(0, 100%, 50%)` : `hsl(${element.colorHue}, 100%, 70%)`;
-                    ctx.fillStyle = lightColor;
-                    ctx.shadowColor = lightColor;
+                    ctx.fillStyle = element.color;
+                    ctx.shadowColor = element.color;
                     ctx.shadowBlur = 5;
                     ctx.globalAlpha = 0.7;
                     ctx.beginPath();
@@ -212,13 +205,12 @@ function animate() {
                     element.x = width + element.width / 2;
                 break;
             case 'searchLight':
-                element.colorHue = (element.colorHue + element.colorSpeed) % 360;
                 ctx.save();
                 ctx.translate(element.x, height);
                 ctx.rotate(element.angle);
                 const gradient = ctx.createLinearGradient(0, 0, 0, -element.height);
-                gradient.addColorStop(0, `hsla(${element.colorHue}, 100%, 75%, 0.4)`);
-                gradient.addColorStop(1, `hsla(${element.colorHue}, 100%, 75%, 0)`);
+                gradient.addColorStop(0, 'rgba(255, 255, 200, 0.4)');
+                gradient.addColorStop(1, 'rgba(255, 255, 200, 0)');
                 ctx.fillStyle = gradient;
                 ctx.beginPath();
                 ctx.moveTo(-element.width / 8, 0);
@@ -234,18 +226,18 @@ function animate() {
                 }
                 element.x -= element.moveSpeed;
                 if (element.x < -width * 0.25)
-                    element.x = width * 1.25;
+                    element.x = width * 1.25; // Wider range for respawning
                 break;
         }
     });
     drawText();
     requestAnimationFrame(animate);
 }
-generateBuildings(700);
-generateCars(500);
-generateLights(1000);
+generateBuildings(500);
+generateCars(700);
+generateLights(1300);
 generateClouds(30);
 generateStars(200);
-generateSearchLights(12);
+generateSearchLights(20);
 animate();
 //# sourceMappingURL=main.js.map
