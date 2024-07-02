@@ -50,7 +50,7 @@ const height = 1440;
 canvas.width = width;
 canvas.height = height;
 
-const cityHeight = height * 4 / 5;
+const cityHeight = height * 2 / 3;
 
 const buildings: Building[] = [];
 const cars: Car[] = [];
@@ -143,7 +143,7 @@ function drawSky() {
 
 function drawMoon() {
     const moonRadius = 200;
-    const moonY = height * 0.32;
+    const moonY = height * 0.4;
     ctx.fillStyle = '#ffffff';
     ctx.beginPath();
     ctx.arc(width / 2, moonY, moonRadius, 0, Math.PI * 2);
