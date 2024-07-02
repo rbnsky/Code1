@@ -24,7 +24,7 @@ function generateBuildings(count) {
             height: buildingHeight + (depth > 0.9 ? Math.random() * height * 0.3 : 0),
             brightness,
             depth,
-            speed: (1 - depth) * 1 + 0.2,
+            speed: ((1 - depth) * 1 + 0.2) * 2, // Doubled speed
             type: 'building'
         });
     }
@@ -38,7 +38,7 @@ function generateCars(count) {
         cars.push({
             x: Math.random() * width,
             y,
-            speed: (1 - depth) * 3 + 1,
+            speed: ((1 - depth) * 3 + 1) * 2, // Doubled speed
             isWhite: Math.random() < 0.5,
             depth,
             type: 'car'
@@ -58,7 +58,7 @@ function generateLights(count) {
             blinkState: true,
             blinkTimer: Math.random() * 200,
             isRed,
-            speed: (1 - depth) * 1 + 0.2,
+            speed: ((1 - depth) * 1 + 0.2) * 2, // Doubled speed
             depth,
             type: 'light'
         });
@@ -73,7 +73,7 @@ function generateClouds(count) {
             y: Math.random() * (height * 0.5) + height * 0.25,
             width: Math.random() * 400 + 200,
             height: Math.random() * 30 + 10,
-            speed: (1 - depth) * 0.6 + 0.2,
+            speed: ((1 - depth) * 0.6 + 0.2) * 2, // Doubled speed
             depth,
             type: 'cloud'
         });
@@ -94,13 +94,13 @@ function generateSearchLights(count) {
         const initialDirection = Math.random() < 0.5 ? 1 : -1;
         const depth = Math.random();
         searchLights.push({
-            x: Math.random() * (width * 1.5) - width * 0.25, // Wider range for initial x position
+            x: Math.random() * (width * 1.5) - width * 0.25,
             angle: (Math.random() * Math.PI / 6 - Math.PI / 12) * initialDirection,
-            speed: (Math.random() * 0.0008 + 0.0002) * initialDirection,
+            speed: (Math.random() * 0.0008 + 0.0002) * initialDirection * 2, // Doubled speed
             width: Math.random() * 60 + 30,
             height: Math.random() * height * 0.7 + height * 0.4,
             depth,
-            moveSpeed: (1 - depth) * 1 + 0.2,
+            moveSpeed: ((1 - depth) * 1 + 0.2) * 2, // Doubled speed
             type: 'searchLight'
         });
     }
@@ -226,7 +226,7 @@ function animate() {
                 }
                 element.x -= element.moveSpeed;
                 if (element.x < -width * 0.25)
-                    element.x = width * 1.25; // Wider range for respawning
+                    element.x = width * 1.25;
                 break;
         }
     });
