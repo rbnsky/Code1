@@ -281,6 +281,6 @@ generateCars(500);
 generateLights(1000);
 generateClouds(30);
 generateStars(200);
-generateSearchLights(15); // Increased from 10 to 15
+generateSearchLights(12);
 animate();
 //# sourceMappingURL=main.js.map
