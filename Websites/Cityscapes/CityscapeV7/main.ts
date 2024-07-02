@@ -213,9 +213,9 @@ function drawText() {
     ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
     ctx.font = 'bold 24px Arial';
     ctx.textAlign = 'right';
-    ctx.fillText('NEO TOKYO 2084', width - 20, height - 50);
+    ctx.fillText('', width - 20, height - 50);
     ctx.font = '18px Arial';
-    ctx.fillText('SECTOR 7G', width - 20, height - 20);
+    ctx.fillText('', width - 20, height - 20);
 }
 
 function animate() {

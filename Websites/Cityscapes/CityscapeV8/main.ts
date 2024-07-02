@@ -13,7 +13,8 @@ interface Car {
     x: number;
     y: number;
     speed: number;
-    isWhite: boolean;
+    colorHue: number;
+    colorSpeed: number;
     depth: number;
     type: 'car';
 }
@@ -22,7 +23,8 @@ interface Light {
     x: number;
     y: number;
     size: number;
-    color: string;
+    colorHue: number;
+    colorSpeed: number;
     blink: boolean;
     blinkState: boolean;
     blinkTimer: number;
@@ -57,6 +59,8 @@ interface SearchLight {
     height: number;
     depth: number;
     moveSpeed: number;
+    colorHue: number;
+    colorSpeed: number;
     type: 'searchLight';
 }
 
@@ -108,7 +112,8 @@ function generateCars(count: number) {
             x: Math.random() * width,
             y,
             speed: (1 - depth) * 3 + 1,
-            isWhite: Math.random() < 0.5,
+            colorHue: Math.random() * 360,
+            colorSpeed: Math.random() * 0.5 + 0.1,
             depth,
             type: 'car'
         });
@@ -123,7 +128,8 @@ function generateLights(count: number) {
             x: Math.random() * width,
             y: height / 2 + Math.random() * height / 2,
             size: Math.random() * 1.5 + 0.5,
-            color: isRed ? 'hsl(0, 100%, 50%)' : `hsl(40, 100%, ${90 + Math.random() * 10}%)`,
+            colorHue: isRed ? 0 : Math.random() * 60 + 30,
+            colorSpeed: Math.random() * 0.3 + 0.1,
             blink: Math.random() < 0.2,
             blinkState: true,
             blinkTimer: Math.random() * 200,
@@ -167,13 +173,15 @@ function generateSearchLights(count: number) {
         const initialDirection = Math.random() < 0.5 ? 1 : -1;
         const depth = Math.random();
         searchLights.push({
-            x: Math.random() * (width * 1.5) - width * 0.25, // Wider range for initial x position
+            x: Math.random() * (width * 1.5) - width * 0.25,
             angle: (Math.random() * Math.PI / 6 - Math.PI / 12) * initialDirection,
             speed: (Math.random() * 0.0008 + 0.0002) * initialDirection,
             width: Math.random() * 60 + 30,
             height: Math.random() * height * 0.7 + height * 0.4,
             depth,
             moveSpeed: (1 - depth) * 1 + 0.2,
+            colorHue: Math.random() * 360,
+            colorSpeed: Math.random() * 0.2 + 0.05,
             type: 'searchLight'
         });
     }
@@ -240,7 +248,8 @@ function animate() {
                 if (element.x + element.width < 0) element.x = width;
                 break;
             case 'car':
-                const color = element.isWhite ? 'rgba(255, 250, 240, 0.8)' : 'rgba(255, 0, 0, 0.8)';
+                element.colorHue = (element.colorHue + element.colorSpeed) % 360;
+                const color = `hsla(${element.colorHue}, 100%, 50%, 0.8)`;
                 ctx.fillStyle = color;
                 ctx.shadowColor = color;
                 ctx.shadowBlur = 10;
@@ -252,6 +261,7 @@ function animate() {
                 if (element.x < 0) element.x = width;
                 break;
             case 'light':
+                element.colorHue = (element.colorHue + element.colorSpeed) % 360;
                 if (element.blink) {
                     element.blinkTimer--;
                     if (element.blinkTimer <= 0) {
@@ -260,8 +270,9 @@ function animate() {
                     }
                 }
                 if (!element.blink || element.blinkState) {
-                    ctx.fillStyle = element.color;
-                    ctx.shadowColor = element.color;
+                    const lightColor = element.isRed ? `hsl(0, 100%, 50%)` : `hsl(${element.colorHue}, 100%, 70%)`;
+                    ctx.fillStyle = lightColor;
+                    ctx.shadowColor = lightColor;
                     ctx.shadowBlur = 5;
                     ctx.globalAlpha = 0.7;
                     ctx.beginPath();
@@ -282,12 +293,13 @@ function animate() {
                 if (element.x + element.width / 2 < 0) element.x = width + element.width / 2;
                 break;
             case 'searchLight':
+                element.colorHue = (element.colorHue + element.colorSpeed) % 360;
                 ctx.save();
                 ctx.translate(element.x, height);
                 ctx.rotate(element.angle);
                 const gradient = ctx.createLinearGradient(0, 0, 0, -element.height);
-                gradient.addColorStop(0, 'rgba(255, 255, 200, 0.4)');
-                gradient.addColorStop(1, 'rgba(255, 255, 200, 0)');
+                gradient.addColorStop(0, `hsla(${element.colorHue}, 100%, 75%, 0.4)`);
+                gradient.addColorStop(1, `hsla(${element.colorHue}, 100%, 75%, 0)`);
                 ctx.fillStyle = gradient;
                 ctx.beginPath();
                 ctx.moveTo(-element.width / 8, 0);
@@ -302,7 +314,7 @@ function animate() {
                     element.speed = -element.speed;
                 }
                 element.x -= element.moveSpeed;
-                if (element.x < -width * 0.25) element.x = width * 1.25; // Wider range for respawning
+                if (element.x < -width * 0.25) element.x = width * 1.25;
                 break;
         }
     });
