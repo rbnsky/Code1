@@ -142,8 +142,8 @@ function drawSky() {
 }
 
 function drawMoon() {
-    const moonRadius = 160;
-    const moonY = height * 0.4;
+    const moonRadius = 200;
+    const moonY = height * 0.32;
     ctx.fillStyle = '#ffffff';
     ctx.beginPath();
     ctx.arc(width / 2, moonY, moonRadius, 0, Math.PI * 2);
