@@ -62,10 +62,10 @@ function generateClouds(count) {
         const depth = isLow ? Math.random() : 1;
         clouds.push({
             x: Math.random() * width,
-            y: isLow ? height - Math.random() * cityHeight * 0.7 : Math.random() * (height * 0.6) + height * 0.2,
+            y: Math.random() * (height * 0.5) + height * 0.25,
             width: Math.random() * 400 + 200,
             height: Math.random() * 30 + 10,
-            speed: Math.random() * 0.2 + 0.05,
+            speed: Math.random() * 0.2 + 0.1,
             depth
         });
     }
@@ -90,7 +90,7 @@ function drawSky() {
 function drawMoon() {
     const moonRadius = 200;
     const moonY = height * 0.4;
-    ctx.fillStyle = '#ffffff';
+    ctx.fillStyle = '#eae8e1';
     ctx.beginPath();
     ctx.arc(width / 2, moonY, moonRadius, 0, Math.PI * 2);
     ctx.fill();
@@ -184,7 +184,7 @@ function animate() {
 generateBuildings(700);
 generateCars(500);
 generateLights(1000);
-generateClouds(50);
+generateClouds(30);
 generateStars(200);
 animate();
 //# sourceMappingURL=main.js.map
