@@ -9,9 +9,9 @@ const cityHeight = height * 2 / 3;
 const buildings = [];
 const cars = [];
 const lights = [];
-const searchLights = [];
 const clouds = [];
 const stars = [];
+const searchLights = [];
 function generateBuildings(count) {
     for (let i = 0; i < count; i++) {
         const depth = Math.random();
@@ -57,19 +57,6 @@ function generateLights(count) {
         });
     }
 }
-function generateSearchLights(count) {
-    for (let i = 0; i < count; i++) {
-        searchLights.push({
-            x: Math.random() * width,
-            angle: Math.random() * Math.PI / 4 - Math.PI / 8,
-            speed: (Math.random() * 0.002 + 0.001) * (Math.random() < 0.5 ? 1 : -1),
-            width: Math.random() * 50 + 30,
-            height: Math.random() * height * 0.6 + height * 0.3,
-            depth: Math.random()
-        });
-    }
-    searchLights.sort((a, b) => b.depth - a.depth);
-}
 function generateClouds(count) {
     for (let i = 0; i < count; i++) {
         const isLow = Math.random() < 0.4;
@@ -93,6 +80,19 @@ function generateStars(count) {
             warmth: Math.random() * 0.3 + 0.7
         });
     }
+}
+function generateSearchLights(count) {
+    for (let i = 0; i < count; i++) {
+        searchLights.push({
+            x: Math.random() * width,
+            angle: Math.random() * Math.PI / 4 - Math.PI / 8,
+            speed: (Math.random() * 0.0005 + 0.0002) * (Math.random() < 0.5 ? 1 : -1),
+            width: Math.random() * 100 + 50,
+            height: Math.random() * height * 0.7 + height * 0.4,
+            depth: Math.random()
+        });
+    }
+    searchLights.sort((a, b) => a.depth - b.depth);
 }
 function drawSky() {
     const gradient = ctx.createRadialGradient(width / 2, 0, 0, width / 2, 0, height);
@@ -162,28 +162,6 @@ function drawLights() {
         }
     });
 }
-function drawSearchLights() {
-    searchLights.forEach(light => {
-        ctx.save();
-        ctx.translate(light.x, height);
-        ctx.rotate(light.angle);
-        const gradient = ctx.createLinearGradient(0, 0, 0, -light.height);
-        gradient.addColorStop(0, 'rgba(255, 255, 200, 0.2)');
-        gradient.addColorStop(1, 'rgba(255, 255, 200, 0)');
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.moveTo(-light.width / 2, 0);
-        ctx.lineTo(light.width / 2, 0);
-        ctx.lineTo(0, -light.height);
-        ctx.closePath();
-        ctx.fill();
-        ctx.restore();
-        light.angle += light.speed;
-        if (light.angle > Math.PI / 4 || light.angle < -Math.PI / 4) {
-            light.speed = -light.speed;
-        }
-    });
-}
 function drawClouds() {
     ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
     clouds.sort((a, b) => b.depth - a.depth).forEach(cloud => {
@@ -206,13 +184,35 @@ function drawStars() {
         ctx.fill();
     });
 }
+function drawSearchLights() {
+    searchLights.forEach(light => {
+        ctx.save();
+        ctx.translate(light.x, height);
+        ctx.rotate(light.angle);
+        const gradient = ctx.createLinearGradient(0, 0, 0, -light.height);
+        gradient.addColorStop(0, 'rgba(255, 255, 200, 0.4)');
+        gradient.addColorStop(1, 'rgba(255, 255, 200, 0)');
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(-light.width / 4, -light.height);
+        ctx.lineTo(light.width / 4, -light.height);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+        light.angle += light.speed;
+        if (light.angle > Math.PI / 4 || light.angle < -Math.PI / 4) {
+            light.speed = -light.speed;
+        }
+    });
+}
 function drawText() {
     ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
     ctx.font = 'bold 24px Arial';
     ctx.textAlign = 'right';
-    ctx.fillText('Codescape', width - 20, height - 50);
+    ctx.fillText('NEO TOKYO 2084', width - 20, height - 50);
     ctx.font = '18px Arial';
-    ctx.fillText('Made in Typescript', width - 20, height - 20);
+    ctx.fillText('SECTOR 7G', width - 20, height - 20);
 }
 function animate() {
     ctx.clearRect(0, 0, width, height);
@@ -220,11 +220,59 @@ function animate() {
     drawStars();
     drawMoon();
     drawClouds();
-    drawSearchLights(); // Add this line
-    drawBuildings();
+    // Draw search lights and other elements in order of depth
+    const allElements = [...searchLights, ...buildings, ...cars];
+    allElements.sort((a, b) => b.depth - a.depth);
+    allElements.forEach(element => {
+        if ('width' in element && 'height' in element && 'brightness' in element) {
+            // It's a building
+            ctx.fillStyle = `rgb(${element.brightness}, ${element.brightness}, ${element.brightness})`;
+            ctx.fillRect(element.x, element.y, element.width, element.height);
+            ctx.strokeStyle = `rgb(${Math.min(255, element.brightness + 20)}, ${Math.min(255, element.brightness + 20)}, ${Math.min(255, element.brightness + 20)})`;
+            ctx.lineWidth = 1;
+            ctx.strokeRect(element.x, element.y, element.width, element.height);
+        }
+        else if ('speed' in element && 'isWhite' in element) {
+            // It's a car
+            const color = element.isWhite ? 'rgba(255, 250, 240, 0.8)' : 'rgba(255, 0, 0, 0.8)';
+            ctx.fillStyle = color;
+            ctx.shadowColor = color;
+            ctx.shadowBlur = 10;
+            ctx.beginPath();
+            ctx.arc(element.x, element.y, 1.5, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0;
+            element.x += element.speed;
+            if (element.x > width)
+                element.x = 0;
+            if (element.x < 0)
+                element.x = width;
+        }
+        else {
+            // It's a search light
+            ctx.save();
+            ctx.translate(element.x, height);
+            ctx.rotate(element.angle);
+            const gradient = ctx.createLinearGradient(0, 0, 0, -element.height);
+            gradient.addColorStop(0, 'rgba(255, 255, 200, 0.4)');
+            gradient.addColorStop(1, 'rgba(255, 255, 200, 0)');
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.moveTo(-element.width / 6, 0); // Wider at the base
+            ctx.lineTo(element.width / 6, 0); // Wider at the base
+            ctx.lineTo(element.width / 4, -element.height);
+            ctx.lineTo(-element.width / 4, -element.height);
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+            element.angle += element.speed;
+            if (element.angle > Math.PI / 4 || element.angle < -Math.PI / 4) {
+                element.speed = -element.speed;
+            }
+        }
+    });
     drawLights();
-    drawCars();
-    drawText(); // Add this line
+    drawText();
     requestAnimationFrame(animate);
 }
 generateBuildings(700);
@@ -232,6 +280,6 @@ generateCars(500);
 generateLights(1000);
 generateClouds(30);
 generateStars(200);
-generateSearchLights(10); // Add this line
+generateSearchLights(15); // Increased from 10 to 15
 animate();
 //# sourceMappingURL=main.js.map
