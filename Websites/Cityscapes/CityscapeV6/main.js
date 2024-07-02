@@ -83,11 +83,12 @@ function generateStars(count) {
 }
 function generateSearchLights(count) {
     for (let i = 0; i < count; i++) {
+        const initialDirection = Math.random() < 0.5 ? 1 : -1;
         searchLights.push({
             x: Math.random() * width,
-            angle: Math.random() * Math.PI / 4 - Math.PI / 8,
-            speed: (Math.random() * 0.0005 + 0.0002) * (Math.random() < 0.5 ? 1 : -1),
-            width: Math.random() * 100 + 50,
+            angle: (Math.random() * Math.PI / 6 - Math.PI / 12) * initialDirection, // Random initial angle
+            speed: (Math.random() * 0.0004 + 0.0001) * initialDirection, // Speed matches initial direction
+            width: Math.random() * 60 + 30,
             height: Math.random() * height * 0.7 + height * 0.4,
             depth: Math.random()
         });
@@ -258,15 +259,15 @@ function animate() {
             gradient.addColorStop(1, 'rgba(255, 255, 200, 0)');
             ctx.fillStyle = gradient;
             ctx.beginPath();
-            ctx.moveTo(-element.width / 6, 0); // Wider at the base
-            ctx.lineTo(element.width / 6, 0); // Wider at the base
-            ctx.lineTo(element.width / 4, -element.height);
-            ctx.lineTo(-element.width / 4, -element.height);
+            ctx.moveTo(-element.width / 8, 0);
+            ctx.lineTo(element.width / 8, 0);
+            ctx.lineTo(element.width / 5, -element.height);
+            ctx.lineTo(-element.width / 5, -element.height);
             ctx.closePath();
             ctx.fill();
             ctx.restore();
             element.angle += element.speed;
-            if (element.angle > Math.PI / 4 || element.angle < -Math.PI / 4) {
+            if (element.angle > Math.PI / 6 || element.angle < -Math.PI / 6) {
                 element.speed = -element.speed;
             }
         }
