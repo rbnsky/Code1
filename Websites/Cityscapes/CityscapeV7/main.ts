@@ -92,7 +92,7 @@ function generateBuildings(count: number) {
             height: buildingHeight + (depth > 0.9 ? Math.random() * height * 0.3 : 0),
             brightness,
             depth,
-            speed: (1 - depth) * 0.5 + 0.1,
+            speed: (1 - depth) * 1 + 0.2, // Increased speed
             type: 'building'
         });
     }
@@ -107,7 +107,7 @@ function generateCars(count: number) {
         cars.push({
             x: Math.random() * width,
             y,
-            speed: (1 - depth) * 1.5 + 0.5,
+            speed: (1 - depth) * 3 + 1, // Increased speed
             isWhite: Math.random() < 0.5,
             depth,
             type: 'car'
@@ -128,7 +128,7 @@ function generateLights(count: number) {
             blinkState: true,
             blinkTimer: Math.random() * 200,
             isRed,
-            speed: (1 - depth) * 0.5 + 0.1,
+            speed: (1 - depth) * 1 + 0.2, // Increased speed
             depth,
             type: 'light'
         });
@@ -144,7 +144,7 @@ function generateClouds(count: number) {
             y: Math.random() * (height * 0.5) + height * 0.25,
             width: Math.random() * 400 + 200,
             height: Math.random() * 30 + 10,
-            speed: (1 - depth) * 0.3 + 0.1,
+            speed: (1 - depth) * 0.6 + 0.2, // Increased speed
             depth,
             type: 'cloud'
         });
@@ -169,11 +169,11 @@ function generateSearchLights(count: number) {
         searchLights.push({
             x: Math.random() * width,
             angle: (Math.random() * Math.PI / 6 - Math.PI / 12) * initialDirection,
-            speed: (Math.random() * 0.0004 + 0.0001) * initialDirection,
+            speed: (Math.random() * 0.0008 + 0.0002) * initialDirection, // Increased rotation speed
             width: Math.random() * 60 + 30,
             height: Math.random() * height * 0.7 + height * 0.4,
             depth,
-            moveSpeed: (1 - depth) * 0.5 + 0.1,
+            moveSpeed: (1 - depth) * 1 + 0.2, // Increased movement speed
             type: 'searchLight'
         });
     }
