@@ -85,7 +85,6 @@ const choiceTexts = [
     "You agree to the fox's terms, curious about the favor it might ask for later.",
     "You decide to trust your own instincts and continue walking alone.",
     "You decide to face the goblins head-on and see what they are protecting.",
-    "Sneak Past the Goblins",
     "You try to sneak past them, hoping to avoid a confrontation.",
     "You collect some herbs, thinking they might be useful later.",
     "You ask the fox to take you to the next part of the forest.",
